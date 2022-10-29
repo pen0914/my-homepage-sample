@@ -1,13 +1,15 @@
 {
-  "name": "clothing",
+  "name": "my-homepage-sample",
   "version": "1.0.0",
-  "description": "",
+  "description": "服のサイト",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "image": "1.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-scripts": "4.0.0"
+    "react-scripts": "4.0.0",
+    "src": "1.1.2"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",
