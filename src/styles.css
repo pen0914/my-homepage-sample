@@ -2,9 +2,6 @@
 
 body {
   margin: 0;
-}
-
-body {
   background-color: rgba(132, 75, 39, 0.389);
 }
 
@@ -43,29 +40,37 @@ body {
   line-height: 50px;
 }
 
-.top {
-  margin: 65px 0 0 170px;
-}
-
-.top-explain {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-}
-
-li {
-  list-style: none;
-  float: left;
-  width: 33%;
-}
-
 .main {
-  border: 20px 10px;
+  margin: 0 auto;
+}
+
+.item-container {
+  margin: 96px auto;
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+}
+
+.item {
+  display: inline-block;
+  width: 25vw;
+  margin: 20px 10px;
+  text-align: center;
+
+  box-shadow: 0 0 6px #e8e8e8;
+  background-color: #b15804;
+  cursor: pointer;
 }
 
 .pic {
-  width: 200px;
-  height: 200px;
+  max-width: 100%;
+  height: auto;
 }
 
 .explain {
-  color: black;
+  height: 120px;
+  vertical-align: middle;
+}
+
+.title {
 }
