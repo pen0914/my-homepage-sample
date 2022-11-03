@@ -55,7 +55,6 @@ body {
   display: inline-block;
   width: 25vw;
   margin: 20px 10px;
-  text-align: center;
 
   box-shadow: 0 0 6px #e8e8e8;
   background-color: #b15804;
@@ -70,7 +69,4 @@ body {
 .explain {
   height: 120px;
   vertical-align: middle;
-}
-
-.title {
 }
