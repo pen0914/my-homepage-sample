@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "../styles.css";
+import "../../styles.css";
 
 export const Home = () => {
   const [items, setItems] = useState([

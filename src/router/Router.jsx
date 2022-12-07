@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router-dom";
-import { Cart } from "../components/Cart";
-import { Home } from "../components/Home";
+import { Cart } from "../components/pages/Cart";
+import { Home } from "../components/pages/Home";
 
 export const Router = () => {
   return (
