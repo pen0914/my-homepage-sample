@@ -1,13 +1,10 @@
-import { Link } from "react-router-dom";
-export const Cart = () => {
+import React, { memo } from "react";
+
+export const Cart = memo(() => {
   return (
     <>
-      <div>
-        <br />
-        <br />
-        <p>カート内一覧</p>
-        <Link to="/">ホームに戻る</Link>
-      </div>
+      <p>カートページです。</p>
+      <p>表示されません。</p>
     </>
   );
-};
+});
