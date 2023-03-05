@@ -1,29 +1,71 @@
 import React, { memo } from "react";
-import Css from "../../css/HomeCss.module.scss";
+import styled from "styled-components";
 
 export const HomeLayout = memo((props) => {
   const { items, onClickPage } = props;
   return (
     <>
-      <div className={Css.itemContainer}>
+      <SitemContainer>
         {items.map((oneitem) => {
           return (
-            <div
+            <Sitem
               key={oneitem.id}
               onClick={() => onClickPage(oneitem.partNumber)}
-              className={Css.item}
             >
-              <img src={oneitem.image} className={Css.pic} alt="" />
-              <div className={Css.explain}>
-                <p className={Css.brand}>{`【${oneitem.brand}】`}</p>
-                <p className={Css.title}>{oneitem.name}</p>
+              <Spic src={oneitem.image} alt="" />
+              <Sexplain>
+                <p>{`【${oneitem.brand}】`}</p>
+                <p>{oneitem.name}</p>
 
                 <p>{oneitem.price}</p>
-              </div>
-            </div>
+              </Sexplain>
+            </Sitem>
           );
         })}
-      </div>
+      </SitemContainer>
     </>
   );
 });
+
+const SitemContainer = styled.div`
+  && {
+    text-align: center;
+
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+  }
+`;
+
+const Sitem = styled.div`
+  && {
+    flex-basis: 200px;
+    flex-grow: 1;
+
+    max-width: 250px;
+    margin: 20px 10px;
+    box-shadow: 0 0 6px #000000;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    &hover {
+      cursor: pointer;
+    }
+  }
+`;
+
+const Spic = styled.img`
+  && {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px 10px 0 0;
+  }
+`;
+
+const Sexplain = styled.div`
+  && {
+    height: 120px;
+  }
+`;

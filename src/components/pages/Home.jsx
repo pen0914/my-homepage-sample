@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import "../../styles.css";
+
 import { useHistory } from "react-router-dom";
 import { ItemContext } from "../providers/ItemProvider";
 

@@ -1,40 +1,67 @@
-import React, { memo, useState } from "react";
-import Css from "../css/DrawerCss.module.scss";
+import React, { memo, useState } from 'react';
+import styled from 'styled-components';
 
 export const Drawer = memo((props) => {
-  const {} = props;
-  const [active, setActive] = useState(true);
-  const ClassToggle = () => {
-    setActive(!active);
-  };
+  const { active } = props;
+
   return (
-    <div>
-      <button onClick={ClassToggle}>メニュー</button>
-      <nav className={active ? Css.Omenu : Css.Cmenu}>
-        <ul>
-          <li>
+    <SDiv active={active}>
+      <SNav active={active}>
+        <SUl>
+          <SL>
             <button>ホーム</button>
-          </li>
-          <li>
+          </SL>
+          <SL>
             <button>カテゴリー</button>
-          </li>
-          <li>
+          </SL>
+          <SL>
             <button>ご利用ガイド</button>
-          </li>
-          <li>
+          </SL>
+          <SL>
             <button>お問い合わせ</button>
-          </li>
-          <li>
+          </SL>
+          <SL>
             <button>よくあるご質問</button>
-          </li>
-          <li>
+          </SL>
+          <SL>
             <button>プライバシーポリシー</button>
-          </li>
-          <li>
+          </SL>
+          <SL>
             <button>特定商取引法に基づく表示</button>
-          </li>
-        </ul>
-      </nav>
-    </div>
+          </SL>
+        </SUl>
+      </SNav>
+    </SDiv>
   );
 });
+
+const SDiv = styled.div`
+  && {
+    width: 30%;
+    margin-top: 0;
+  }
+`;
+
+const SNav = styled.nav`
+  && {
+    /* width: ${(props) =>
+      props.active ? '100%' : '0'}; */
+    display: ${(props) => (props.active ? 'none' : '')};
+    text-align:center;
+    background-color:red;
+    height:100vh;
+  }
+`;
+
+const SUl = styled.ul`
+  && {
+    padding-left: 0;
+    margin: 0;
+  }
+`;
+
+const SL = styled.li`
+  && {
+    list-style: none;
+  }
+`;

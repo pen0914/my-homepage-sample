@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import Css from "../../css/ItemDetailCss.module.scss";
+import styled from "styled-components";
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
@@ -25,48 +25,84 @@ export const ItemDetailLayout = memo((props) => {
   //詳細ページを返す
   return (
     <>
-      <p className={Css.pic}>
-        <img
-          alt={res.name}
-          src={res.image}
-          className={Css.image}
-          width="400px"
-        />
+      <Spic>
+        <Simage alt={res.name} src={res.image} width="400px" />
         <br />
 
         {res.name}
         <br />
         {res.price}
-      </p>
+      </Spic>
       <div>
         <div>
           <button onClick={() => onClickCart(res.partNumber)}>
             カートに入れる
           </button>
         </div>
-        <div className={Css.explain}>
-          <div className={Css.brand}>
+        <Sexplain>
+          <Sbrand>
             <p>[brand]</p>
             <p>{res.brand}</p>
-          </div>
-          <div className={Css.category}>
+          </Sbrand>
+          <Scategory>
             <p>[category]</p>
             <p>{res.category}</p>
-          </div>
-          <div className={Css.detail}>
+          </Scategory>
+          <Sdetail>
             <p>[detail]</p>
             <p>{res.detail}</p>
-          </div>
-          <div className={Css.size}>
+          </Sdetail>
+          <Ssize>
             <p>[size]</p>
             <p>{res.size}</p>
-          </div>
-          <div className={Css.condition}>
+          </Ssize>
+          <Scondtion>
             <p>[condition]</p>
             <p>{res.condition}</p>
-          </div>
-        </div>
+          </Scondtion>
+        </Sexplain>
       </div>
     </>
   );
 });
+
+const Spic = styled.p`
+  && {
+    text-align: center;
+  }
+`;
+
+const Simage = styled.img`
+  && {
+    display: inline-block;
+  }
+`;
+
+const Sexplain = styled.div`
+  && {
+    font-family: "Karla", sans-serif;
+    font-size: 20px;
+  }
+`;
+
+const Sbrand = styled.div`
+  && {
+  }
+`;
+
+const Scategory = styled.div`
+  && {
+  }
+`;
+
+const Sdetail = styled.div`
+  && {
+  }
+`;
+
+const Ssize = styled.div`
+  && {
+  }
+`;
+
+const Scondtion = styled.div``;
