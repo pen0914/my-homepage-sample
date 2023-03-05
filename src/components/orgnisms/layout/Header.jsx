@@ -17,10 +17,14 @@ export const Header = memo((props) => {
         <SMenudiv>
           <SMenu onClick={ClassToggle}>メニュー</SMenu>
         </SMenudiv>
-        <SLink1 to="/">デモサイト</SLink1>
-        <SLink2 to="cart">
-          <BsCart2 size={'20px'} />
-        </SLink2>
+        <SLink1Div>
+          <SLink1 to="/">ECサイト</SLink1>
+        </SLink1Div>
+        <SLink2Div>
+          <SLink2 to="cart">
+            <BsCart2 size={'20px'} />
+          </SLink2>
+        </SLink2Div>
       </SFirstDiv>
       <Drawer active={active} />
     </SDiv>
@@ -39,7 +43,7 @@ const SDiv = styled.div`
 const SFirstDiv = styled.div`
   && {
     color: white;
-    background-color: rgb(1, 1, 1);
+    background-color: #333537;
     height: 10%;
 
     display: flex;
@@ -54,27 +58,41 @@ const SFirstDiv = styled.div`
 
 const SMenudiv = styled.div`
   && {
-    height: 20px;
+    height: 40px;
+  }
+`;
+
+const SLink1Div = styled.div`
+  && {
+  }
+`;
+
+const SLink2Div = styled.div`
+  && {
   }
 `;
 
 const SMenu = styled.button`
   && {
+    height: 100%;
     margin: 0 auto;
   }
 `;
 
 const SLink1 = styled(Link)`
   && {
-    flex-basis: 50%;
-    margin: 0 auto;
+    text-decoration: none;
+
+    color: white;
+    font-family: 'Karla', sans-serif;
   }
 `;
 
 const SLink2 = styled(Link)`
   && {
     background-color: rgb(254, 128, 2);
+
     margin-right: 0px;
-    padding: 7px;
+    /* padding: 7px; */
   }
 `;

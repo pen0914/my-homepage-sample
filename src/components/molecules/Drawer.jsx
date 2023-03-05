@@ -9,25 +9,25 @@ export const Drawer = memo((props) => {
       <SNav active={active}>
         <SUl>
           <SL>
-            <button>ホーム</button>
+            <SButton>ホーム</SButton>
           </SL>
           <SL>
-            <button>カテゴリー</button>
+            <SButton>カテゴリー</SButton>
           </SL>
           <SL>
-            <button>ご利用ガイド</button>
+            <SButton>ご利用ガイド</SButton>
           </SL>
           <SL>
-            <button>お問い合わせ</button>
+            <SButton>お問い合わせ</SButton>
           </SL>
           <SL>
-            <button>よくあるご質問</button>
+            <SButton>よくあるご質問</SButton>
           </SL>
           <SL>
-            <button>プライバシーポリシー</button>
+            <SButton>プライバシーポリシー</SButton>
           </SL>
           <SL>
-            <button>特定商取引法に基づく表示</button>
+            <SButton>特定商取引法に基づく表示</SButton>
           </SL>
         </SUl>
       </SNav>
@@ -46,9 +46,9 @@ const SNav = styled.nav`
   && {
     /* width: ${(props) =>
       props.active ? '100%' : '0'}; */
-    display: ${(props) => (props.active ? 'none' : '')};
+    display: ${(props) => (props.active ? '' : 'none')};
     text-align:center;
-    background-color:red;
+    background-color:rgba(51, 53, 55, 0.9);
     height:100vh;
   }
 `;
@@ -63,5 +63,15 @@ const SUl = styled.ul`
 const SL = styled.li`
   && {
     list-style: none;
+    border-bottom: 1px solid #6d6d6d;
+  }
+`;
+
+const SButton = styled.button`
+  && {
+    border: none;
+    background: transparent;
+    color: white;
+    font-weight: bold;
   }
 `;
