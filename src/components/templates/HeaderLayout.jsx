@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import { memo, useState } from 'react';
 import { Drawer } from '../molecules/Drawer';
 import { Header } from '../orgnisms/layout/Header';
@@ -10,7 +11,7 @@ export const HeaderLayout = memo((props) => {
   return (
     <>
       <Header active={active} setActive={setActive} />
-      <p />
+      <SP />
       <MainLayout active={active}>
         <Drawer active={active} />
         {children}
@@ -18,3 +19,13 @@ export const HeaderLayout = memo((props) => {
     </>
   );
 });
+
+const SP = styled.p`
+  && {
+    height: 50px;
+    @media (max-width: 600px) {
+      height: 30px;
+    }
+    margin: 0;
+  }
+`;

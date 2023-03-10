@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-import styled from "styled-components";
+import React, { memo } from 'react';
+import styled from 'styled-components';
 
 export const HomeLayout = memo((props) => {
   const { items, onClickPage } = props;
@@ -10,7 +10,9 @@ export const HomeLayout = memo((props) => {
           return (
             <Sitem
               key={oneitem.id}
-              onClick={() => onClickPage(oneitem.partNumber)}
+              onClick={() =>
+                onClickPage(oneitem.partNumber)
+              }
             >
               <Spic src={oneitem.image} alt="" />
               <Sexplain>
