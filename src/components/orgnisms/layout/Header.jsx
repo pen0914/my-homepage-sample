@@ -12,15 +12,16 @@ export const Header = memo((props) => {
   };
   return (
     <SDiv>
+      <SMenu onClick={ClassToggle}>
+        <BiMenu size={'100%'} color={'white'} />
+      </SMenu>
       <SWrapper>
-        <SMenu onClick={ClassToggle}>
-          <BiMenu size={'100%'} color={'white'} />
-        </SMenu>
         <SLink1 to="/">ECサイト</SLink1>
-        <SLink2 to="cart">
-          <SCartIcon size={'20px'} color={'white'} />
-        </SLink2>
       </SWrapper>
+
+      <SLink2 to="cart">
+        <SCartIcon />
+      </SLink2>
     </SDiv>
   );
 });
@@ -38,17 +39,12 @@ const SDiv = styled.div`
     }
 
     background-color: #333537;
-    &hover {
-      cursor: 'pointer';
-    }
   }
 `;
 
 const SWrapper = styled.div`
   && {
-    position: relative;
-    width: 100%;
-    z-index: 20;
+    text-align: center;
   }
 `;
 
@@ -57,9 +53,7 @@ const SMenu = styled.button`
     position: absolute;
     left: 0;
     display: block;
-    &hover {
-      cursor: 'pointer';
-    }
+
     height: 50px;
     width: 50px;
     @media (max-width: 600px) {
@@ -73,14 +67,7 @@ const SMenu = styled.button`
 
 const SLink1 = styled(Link)`
   && {
-    display: inline-block;
-    position: absolute;
-    right: 50%;
-    left: 50%;
-    height: 50px;
     @media (max-width: 600px) {
-      height: 30px;
-      width: 30px;
     }
     text-decoration: none;
 
@@ -91,10 +78,11 @@ const SLink1 = styled(Link)`
 
 const SLink2 = styled(Link)`
   && {
-    display: inline-block;
+    display: block;
     position: absolute;
     right: 0;
-
+    top: 0;
+    z-index: 20;
     height: 50px;
     width: 50px;
 
@@ -107,5 +95,10 @@ const SLink2 = styled(Link)`
 `;
 const SCartIcon = styled(FaShoppingCart)`
   && {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
   }
 `;
