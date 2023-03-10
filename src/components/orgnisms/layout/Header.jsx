@@ -44,6 +44,9 @@ const SDiv = styled.div`
 
 const SWrapper = styled.div`
   && {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
     text-align: center;
   }
 `;
@@ -93,6 +96,7 @@ const SLink2 = styled(Link)`
     background-color: rgb(254, 128, 2);
   }
 `;
+
 const SCartIcon = styled(FaShoppingCart)`
   && {
     position: relative;
