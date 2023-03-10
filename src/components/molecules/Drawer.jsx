@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 import styled from 'styled-components';
 
 export const Drawer = memo((props) => {
@@ -37,19 +37,15 @@ export const Drawer = memo((props) => {
 
 const SDiv = styled.div`
   && {
-    width: 30%;
-    margin-top: 0;
+    /* height: 100vh; */
   }
 `;
 
 const SNav = styled.nav`
   && {
-    /* width: ${(props) =>
-      props.active ? '100%' : '0'}; */
-    display: ${(props) => (props.active ? '' : 'none')};
-    text-align:center;
-    background-color:rgba(51, 53, 55, 0.9);
-    height:100vh;
+    opacity: ${(props) => (props.active ? '1' : '0')};
+    text-align: center;
+    background-color: rgba(51, 53, 55, 0.9);
   }
 `;
 

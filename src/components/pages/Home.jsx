@@ -1,9 +1,9 @@
-import React, { memo } from "react";
+import React, { memo } from 'react';
 
-import { useHistory } from "react-router-dom";
-import { ItemContext } from "../providers/ItemProvider";
+import { useHistory } from 'react-router-dom';
+import { ItemContext } from '../providers/ItemProvider';
 
-import { HomeLayout } from "../orgnisms/layout/HomeLayout";
+import { HomeLayout } from '../orgnisms/layout/HomeLayout';
 
 export const Home = memo(() => {
   //データを取得
@@ -19,5 +19,9 @@ export const Home = memo(() => {
     });
   };
 
-  return <HomeLayout items={items} onClickPage={onClickPage} />;
+  return (
+    <>
+      <HomeLayout items={items} onClickPage={onClickPage} />
+    </>
+  );
 });
