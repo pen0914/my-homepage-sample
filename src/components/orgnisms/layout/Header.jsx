@@ -56,6 +56,7 @@ const SMenu = styled.button`
     position: absolute;
     left: 0;
     display: block;
+    z-index: 20;
 
     height: 50px;
     width: 50px;
