@@ -18,6 +18,7 @@ const SDiv = styled.div`
 const Div1 = styled.div`
   && {
     flex-basis: ${(props) => (props.active ? '25%' : '0')};
+    transform: translateX();
   }
 `;
 

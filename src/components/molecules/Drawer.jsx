@@ -68,6 +68,7 @@ const SButton = styled.button`
     border: none;
     background: transparent;
     color: white;
+    font-size: 15px;
     font-weight: bold;
   }
 `;
