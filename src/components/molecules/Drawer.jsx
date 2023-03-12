@@ -37,8 +37,9 @@ export const Drawer = memo((props) => {
 
 const SDiv = styled.div`
   && {
-    width: 50vh;
-    height: 100vh;
+    @media not all and (max-width: 600px) {
+      width: 50vh;
+    }
   }
 `;
 

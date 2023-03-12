@@ -11,29 +11,38 @@ export const MainLayout = (props) => {
 };
 
 const SDiv = styled.div`
-  display: flex;
+  && {
+    display: flex;
+  }
 `;
 
 const Div1 = styled.div`
   && {
-    /* flex-basis: ${(props) =>
-      props.active ? '25%' : '0'}; */
-    /* flex-basis: 25%; */
-    transition: all .6s cubic-bezier(0.215,0.61,0.355,1);
-  
-    overflow-y: hidden;
-    position: relative;
-    left: ${(props) => (props.active ? '0' : '-30vh')};
-    
-    opacity: ${(props) => (props.active ? '1' : '0')};
-    visibility: ${(props) =>
-      props.active ? 'visible' : 'hidden'};
+    @media all and (max-width: 600px) {
+      position: fixed;
+      transition: all 0.6s
+        cubic-bezier(0.215, 0.61, 0.355, 1);
+      top: ${(props) => (props.active ? '30px' : '-100vh')};
+      z-index: 5;
+    }
+
+    @media not all and (max-width: 600px) {
+      transition: all 0.6s
+        cubic-bezier(0.215, 0.61, 0.355, 1);
+      overflow-y: hidden;
+      position: relative;
+      left: ${(props) => (props.active ? '0' : '-40vh')};
+      opacity: ${(props) => (props.active ? '1' : '0')};
+      visibility: ${(props) =>
+        props.active ? 'visible' : 'hidden'};
+    }
   }
 `;
 
 const Div2 = styled.div`
   && {
-    flex-basis: ${(props) => (props.active ? '75%' : '')};
-    /* flex-basis: 75%; */
+    @media not all and (max-width: 600px) {
+      flex-basis: ${(props) => (props.active ? '75%' : '')};
+    }
   }
 `;
