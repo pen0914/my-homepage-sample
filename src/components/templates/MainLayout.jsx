@@ -12,19 +12,28 @@ export const MainLayout = (props) => {
 
 const SDiv = styled.div`
   display: flex;
-  height: 100vh;
 `;
 
 const Div1 = styled.div`
   && {
-    flex-basis: ${(props) => (props.active ? '25%' : '0')};
-    transform: translateX();
+    /* flex-basis: ${(props) =>
+      props.active ? '25%' : '0'}; */
+    /* flex-basis: 25%; */
+    transition: all .6s cubic-bezier(0.215,0.61,0.355,1);
+  
+    overflow-y: hidden;
+    position: relative;
+    left: ${(props) => (props.active ? '0' : '-30vh')};
+    
+    opacity: ${(props) => (props.active ? '1' : '0')};
+    visibility: ${(props) =>
+      props.active ? 'visible' : 'hidden'};
   }
 `;
 
 const Div2 = styled.div`
   && {
-    flex-basis: ${(props) =>
-      props.active ? '75%' : '100%'};
+    flex-basis: ${(props) => (props.active ? '75%' : '')};
+    /* flex-basis: 75%; */
   }
 `;

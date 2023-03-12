@@ -13,19 +13,22 @@ export const Header = memo((props) => {
   return (
     <SDiv>
       <SMenu onClick={ClassToggle}>
-        <BiMenu size={'100%'} color={'white'} />
+        <SBiMenu />
       </SMenu>
       <SWrapper>
-        <SLink1 to="/">ECサイト</SLink1>
+        <STitleLink to="/">ECサイト</STitleLink>
       </SWrapper>
 
-      <SLink2 to="cart">
+      <SCartLink to="cart">
         <SCartIcon />
-      </SLink2>
+      </SCartLink>
     </SDiv>
   );
 });
 
+//以下,CSSを記述
+
+//大枠のCSS
 const SDiv = styled.div`
   && {
     position: fixed;
@@ -42,15 +45,7 @@ const SDiv = styled.div`
   }
 `;
 
-const SWrapper = styled.div`
-  && {
-    position: relative;
-    top: 50%;
-    transform: translate(0, -50%);
-    text-align: center;
-  }
-`;
-
+//メニュー部分のCSS
 const SMenu = styled.button`
   && {
     position: absolute;
@@ -66,10 +61,34 @@ const SMenu = styled.button`
     }
     background-color: #333537;
     border: none;
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
 
-const SLink1 = styled(Link)`
+const SBiMenu = styled(BiMenu)`
+  color: white;
+  width: 20px;
+  height: 20px;
+
+  &:hover {
+    transition: color 0.3s ease-in;
+    color: red;
+  }
+`;
+
+//タイトル部分のCSS
+const SWrapper = styled.div`
+  && {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    text-align: center;
+  }
+`;
+
+const STitleLink = styled(Link)`
   && {
     @media (max-width: 600px) {
     }
@@ -80,7 +99,8 @@ const SLink1 = styled(Link)`
   }
 `;
 
-const SLink2 = styled(Link)`
+//カート部分のCSS
+const SCartLink = styled(Link)`
   && {
     display: block;
     position: absolute;

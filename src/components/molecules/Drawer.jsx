@@ -6,7 +6,7 @@ export const Drawer = memo((props) => {
 
   return (
     <SDiv active={active}>
-      <SNav active={active}>
+      <SNav>
         <SUl>
           <SL>
             <SButton>ホーム</SButton>
@@ -37,15 +37,19 @@ export const Drawer = memo((props) => {
 
 const SDiv = styled.div`
   && {
-    /* height: 100vh; */
+    width: 50vh;
+    height: 100vh;
   }
 `;
 
 const SNav = styled.nav`
   && {
-    opacity: ${(props) => (props.active ? '1' : '0')};
     text-align: center;
-    background-color: rgba(51, 53, 55, 0.9);
+    background-color: #333537;
+
+    @media (max-width: 600px) {
+      background-color: rgba(51, 53, 55, 0.9);
+    }
   }
 `;
 

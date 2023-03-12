@@ -49,10 +49,14 @@ const Sitem = styled.div`
     max-width: 250px;
     margin: 20px 10px;
     box-shadow: 0 0 6px #000000;
+
     background-color: #e5e5e5;
     border-radius: 10px;
-    &hover {
+    transition: 0.3s ease-in-out;
+    &:hover {
       cursor: pointer;
+
+      box-shadow: 0 0 15px #000000;
     }
   }
 `;
