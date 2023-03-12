@@ -51,7 +51,7 @@ const SDiv = styled.div`
     }
     @media (max-width: 600px) {
       background-color: rgba(51, 53, 55, 0.9);
-      height: 100vh;
+      height: 100%;
     }
   }
 `;
