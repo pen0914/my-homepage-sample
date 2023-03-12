@@ -22,8 +22,9 @@ const Div1 = styled.div`
     @media all and (max-width: 600px) {
       position: fixed;
       width:100%;
-      inset:0;
-      overflow:auto;
+      inset: ${(props) => (props.active ? '0' : '')};
+      /* overflow: ${(props) =>
+        props.active ? 'auto' : ''}; */
       transition: all 0.6s
         cubic-bezier(0.215, 0.61, 0.355, 1);
       top: ${(props) => (props.active ? '30px' : '-100vh')};
