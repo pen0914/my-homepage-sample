@@ -9,25 +9,31 @@ export const Drawer = memo((props) => {
       <SNav>
         <SUl>
           <SL>
-            <SButton>ホーム</SButton>
+            <SButton active={active}>ホーム</SButton>
           </SL>
           <SL>
-            <SButton>カテゴリー</SButton>
+            <SButton active={active}>カテゴリー</SButton>
           </SL>
           <SL>
-            <SButton>ご利用ガイド</SButton>
+            <SButton active={active}>ご利用ガイド</SButton>
           </SL>
           <SL>
-            <SButton>お問い合わせ</SButton>
+            <SButton active={active}>お問い合わせ</SButton>
           </SL>
           <SL>
-            <SButton>よくあるご質問</SButton>
+            <SButton active={active}>
+              よくあるご質問
+            </SButton>
           </SL>
           <SL>
-            <SButton>プライバシーポリシー</SButton>
+            <SButton active={active}>
+              プライバシーポリシー
+            </SButton>
           </SL>
           <SL>
-            <SButton>特定商取引法に基づく表示</SButton>
+            <SButton active={active}>
+              特定商取引法に基づく表示
+            </SButton>
           </SL>
         </SUl>
       </SNav>
@@ -37,8 +43,9 @@ export const Drawer = memo((props) => {
 
 const SDiv = styled.div`
   && {
+    width: 100%;
     @media not all and (max-width: 600px) {
-      width: 50vh;
+      display: flex;
     }
   }
 `;
@@ -75,5 +82,8 @@ const SButton = styled.button`
     color: white;
     font-size: 15px;
     font-weight: bold;
+    transition: ${(props) =>
+      props.active && 'opacity 3s ease-out'};
+    opacity: ${(props) => (props.active ? '1' : '0')};
   }
 `;

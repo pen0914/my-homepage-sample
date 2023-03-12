@@ -18,6 +18,7 @@ const SDiv = styled.div`
 
 const Div1 = styled.div`
   && {
+   
     @media all and (max-width: 600px) {
       position: fixed;
       transition: all 0.6s
@@ -27,12 +28,14 @@ const Div1 = styled.div`
     }
 
     @media not all and (max-width: 600px) {
+      display: flex;
       transition: all 0.6s
         cubic-bezier(0.215, 0.61, 0.355, 1);
       overflow-y: hidden;
       position: relative;
       left: ${(props) => (props.active ? '0' : '-40vh')};
-      opacity: ${(props) => (props.active ? '1' : '0')};
+      /* opacity: ${(props) =>
+        props.active ? '1' : '0'}; */
       visibility: ${(props) =>
         props.active ? 'visible' : 'hidden'};
     }
