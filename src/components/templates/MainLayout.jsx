@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const MainLayout = (props) => {
-  const { children, active } = props;
+  const { children, active, position } = props;
+  console.log(position);
   return (
-    <SDiv>
+    <SDiv active={active}>
       <Div1 active={active}>{children[0]}</Div1>
-      <Div2 active={active}>{children[1]}</Div2>
+      <Div2 active={active} position={position}>
+        {children[1]}
+      </Div2>
     </SDiv>
   );
 };
@@ -23,11 +26,10 @@ const Div1 = styled.div`
       position: fixed;
       width:100%;
       inset: ${(props) => (props.active ? '0' : '')};
-      /* overflow: ${(props) =>
-        props.active ? 'auto' : ''}; */
+      overflow: ${(props) => (props.active ? 'auto' : '')};
       transition: all 0.6s
         cubic-bezier(0.215, 0.61, 0.355, 1);
-      top: ${(props) => (props.active ? '30px' : '-100vh')};
+      top: ${(props) => (props.active ? '30px' : '-450px')};
       z-index: 5;
     }
 
@@ -48,6 +50,10 @@ const Div1 = styled.div`
 
 const Div2 = styled.div`
   && {
+    @media all and (max-width: 600px) {
+      top: ${(props) =>
+        props.active ? props.position : ''};
+    }
     @media not all and (max-width: 600px) {
       flex-basis: ${(props) => (props.active ? '75%' : '')};
     }
