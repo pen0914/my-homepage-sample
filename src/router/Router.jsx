@@ -1,8 +1,8 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import { HomeRoutes } from "./HomeRoutes";
-import { HeaderLayout } from "../components/templates/HeaderLayout";
-import { Page404 } from "../components/pages/Page404";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { HomeRoutes } from './HomeRoutes';
+import { FullScreenLayout } from '../components/templates/FullScreenLayout';
+import { Page404 } from '../components/pages/Page404';
 
 export const Router = () => {
   return (
@@ -19,7 +19,9 @@ export const Router = () => {
                   exact={route.exact}
                   path={`${url}${route.path}`}
                 >
-                  <HeaderLayout>{route.children}</HeaderLayout>
+                  <FullScreenLayout>
+                    {route.children}
+                  </FullScreenLayout>
                 </Route>
               ))}
             </Switch>

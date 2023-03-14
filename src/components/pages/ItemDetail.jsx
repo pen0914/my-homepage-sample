@@ -1,8 +1,8 @@
-import React, { memo } from "react";
-import { useParams } from "react-router-dom";
+import React, { memo } from 'react';
+import { useParams } from 'react-router-dom';
 
-import { ItemDetailLayout } from "../orgnisms/layout/ItemDetailLayout";
-import { ItemContext } from "../providers/ItemProvider";
+import { ItemDetailLayout } from '../orgnisms/ItemDetailLayout';
+import { ItemContext } from '../providers/ItemProvider';
 
 export const ItemDetail = memo(() => {
   //データを取得
@@ -13,7 +13,9 @@ export const ItemDetail = memo(() => {
   const partNumber = params.clickNumber;
 
   //同じpartNumberを持つデータのみを取り出す
-  const res = items.find((items) => items.partNumber === partNumber);
+  const res = items.find(
+    (items) => items.partNumber === partNumber
+  );
 
   return <ItemDetailLayout res={res} />;
 });

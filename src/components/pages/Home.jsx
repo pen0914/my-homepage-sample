@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { useHistory } from 'react-router-dom';
 import { ItemContext } from '../providers/ItemProvider';
 
-import { HomeLayout } from '../orgnisms/layout/HomeLayout';
+import { HomeLayout } from '../orgnisms/HomeLayout';
 
 export const Home = memo(() => {
   //データを取得

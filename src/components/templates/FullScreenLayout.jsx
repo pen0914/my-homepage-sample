@@ -1,27 +1,32 @@
 import { memo, useEffect, useState } from 'react';
 import { Drawer } from '../molecules/Drawer';
-import { Header } from '../orgnisms/layout/Header';
+import { HeaderLayout } from '../orgnisms/HeaderLayout';
 
-import { MainLayout } from './MainLayout';
+import { MainLayout } from '../orgnisms/MainLayout';
 import { useScroll } from '../../hooks/useScroll';
-export const HeaderLayout = memo((props) => {
+
+export const FullScreenLayout = memo((props) => {
   const { children } = props;
   const { scrollPosition, PositionUp } = useScroll();
   const [active, setActive] = useState(false);
+
+  const ClassToggle = () => {
+    setActive(!active);
+
+    if (!active) {
+      PositionUp();
+    }
+  };
 
   useEffect(() => {
     if (!active) {
       window.scrollTo(0, scrollPosition);
     }
-  }, [active]);
+  }, [active, scrollPosition]);
 
   return (
     <>
-      <Header
-        active={active}
-        setActive={setActive}
-        PositionUp={PositionUp}
-      />
+      <HeaderLayout ClassToggle={ClassToggle} />
       <MainLayout active={active} position={scrollPosition}>
         <Drawer active={active} />
         {children}
