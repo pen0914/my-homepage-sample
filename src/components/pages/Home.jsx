@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-
+import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { ItemContext } from '../providers/ItemProvider';
 
-import { HomeLayout } from '../orgnisms/HomeLayout';
+import { ItemIcon } from '../orgnisms/ItemIcon';
 
 export const Home = memo(() => {
   //データを取得
@@ -13,15 +13,38 @@ export const Home = memo(() => {
   const history = useHistory();
 
   //アイテム画像からページ遷移する(idを渡す)
-  const onClickPage = (partNumber) => {
+  const onClickPage = (id) => {
     history.push({
-      pathname: `select/${partNumber}`
+      pathname: `select/${id}`
     });
   };
 
   return (
     <>
-      <HomeLayout items={items} onClickPage={onClickPage} />
+      <SitemContainer>
+        {items.map((item) => {
+          return (
+            <ItemIcon
+              key={item.id}
+              item={item}
+              onClick={onClickPage}
+              id={item.partNumber}
+            />
+          );
+        })}
+      </SitemContainer>
     </>
   );
 });
+
+const SitemContainer = styled.div`
+  && {
+    text-align: center;
+
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+  }
+`;

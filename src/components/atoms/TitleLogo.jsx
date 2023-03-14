@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { memo } from 'react';
 
-export const TitleLogo = () => {
+export const TitleLogo = memo(() => {
   return (
     <SWrapper>
       <STitleLink to="/">ECサイト</STitleLink>
     </SWrapper>
   );
-};
+});
 
 //タイトル部分のCSS
 const SWrapper = styled.div`

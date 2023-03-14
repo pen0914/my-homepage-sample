@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
-export const CartButton = () => {
+import { memo } from 'react';
+export const CartButton = memo(() => {
   return (
     <SCartLink to="cart">
       <SCartIcon />
     </SCartLink>
   );
-};
+});
 
 //カート部分のCSS
 const SCartLink = styled(Link)`

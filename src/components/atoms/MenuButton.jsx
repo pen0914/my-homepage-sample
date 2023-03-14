@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import { BiMenu } from 'react-icons/bi';
-export const MenuButton = (props) => {
+import { memo } from 'react';
+
+export const MenuButton = memo((props) => {
   const { onClick } = props;
   return (
     <SMenu onClick={onClick}>
       <SBiMenu />
     </SMenu>
   );
-};
+});
 
 //メニュー部分のCSS
 const SMenu = styled.button`
