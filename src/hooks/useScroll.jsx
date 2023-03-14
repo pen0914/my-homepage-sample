@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 export const useScroll = () => {
   const [scrollPosition, setScrollPosition] = useState(0);

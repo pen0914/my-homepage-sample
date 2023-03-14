@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { memo, useEffect, useState } from 'react';
 import { Drawer } from '../molecules/Drawer';
 import { Header } from '../orgnisms/layout/Header';
@@ -9,13 +8,20 @@ export const HeaderLayout = memo((props) => {
   const { children } = props;
   const { scrollPosition, PositionUp } = useScroll();
   const [active, setActive] = useState(false);
+
   useEffect(() => {
-    PositionUp();
-  }, [active, PositionUp]);
+    if (!active) {
+      window.scrollTo(0, scrollPosition);
+    }
+  }, [active]);
+
   return (
     <>
-      <Header active={active} setActive={setActive} />
-      <SP />
+      <Header
+        active={active}
+        setActive={setActive}
+        PositionUp={PositionUp}
+      />
       <MainLayout active={active} position={scrollPosition}>
         <Drawer active={active} />
         {children}
@@ -23,13 +29,3 @@ export const HeaderLayout = memo((props) => {
     </>
   );
 });
-
-const SP = styled.p`
-  && {
-    height: 50px;
-    @media (max-width: 600px) {
-      height: 30px;
-    }
-    margin: 0;
-  }
-`;

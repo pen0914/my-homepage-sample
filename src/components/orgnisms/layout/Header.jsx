@@ -6,9 +6,13 @@ import { BiMenu } from 'react-icons/bi';
 import styled from 'styled-components';
 
 export const Header = memo((props) => {
-  const { active, setActive } = props;
+  const { active, setActive, PositionUp } = props;
   const ClassToggle = () => {
     setActive(!active);
+
+    if (!active) {
+      PositionUp();
+    }
   };
   return (
     <SDiv>
@@ -38,7 +42,7 @@ const SDiv = styled.div`
     width: 100%;
     height: 50px;
     @media (max-width: 600px) {
-      height: 30px;
+      height: 70px;
     }
 
     background-color: #333537;
@@ -56,8 +60,8 @@ const SMenu = styled.button`
     height: 50px;
     width: 50px;
     @media (max-width: 600px) {
-      height: 30px;
-      width: 30px;
+      height: 70px;
+      width: 70px;
     }
     background-color: #333537;
     border: none;
@@ -69,8 +73,8 @@ const SMenu = styled.button`
 
 const SBiMenu = styled(BiMenu)`
   color: white;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 
   &:hover {
     transition: color 0.3s ease-in;
@@ -93,7 +97,7 @@ const STitleLink = styled(Link)`
     @media (max-width: 600px) {
     }
     text-decoration: none;
-
+    font-size: 20px;
     color: white;
     font-family: 'Karla', sans-serif;
   }
@@ -111,8 +115,8 @@ const SCartLink = styled(Link)`
     width: 50px;
 
     @media (max-width: 600px) {
-      height: 30px;
-      width: 30px;
+      height: 70px;
+      width: 70px;
     }
     background-color: rgb(254, 128, 2);
   }
