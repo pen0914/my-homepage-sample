@@ -1,7 +1,7 @@
-import React, { memo, useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { memo, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
@@ -15,10 +15,7 @@ export const ItemDetailLayout = memo((props) => {
     setCartItem([...cartItem, `${res.partNumber}`]);
     //読み込み
     //cartページへ移動
-    history.push({
-      pathname: "cart",
-      state: { cartItem }
-    });
+    history.goBack();
     //データ(state)を渡す
   };
 
@@ -26,7 +23,11 @@ export const ItemDetailLayout = memo((props) => {
   return (
     <>
       <Spic>
-        <Simage alt={res.name} src={res.image} width="400px" />
+        <Simage
+          alt={res.name}
+          src={res.image}
+          width="400px"
+        />
         <br />
 
         {res.name}
@@ -35,7 +36,9 @@ export const ItemDetailLayout = memo((props) => {
       </Spic>
       <div>
         <div>
-          <button onClick={() => onClickCart(res.partNumber)}>
+          <button
+            onClick={() => onClickCart(res.partNumber)}
+          >
             カートに入れる
           </button>
         </div>
@@ -80,7 +83,7 @@ const Simage = styled.img`
 
 const Sexplain = styled.div`
   && {
-    font-family: "Karla", sans-serif;
+    font-family: 'Karla', sans-serif;
     font-size: 20px;
   }
 `;
