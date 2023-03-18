@@ -1,39 +1,70 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Drawer = memo((props) => {
   const { active } = props;
+  const [ca, setCa] = useState(false);
+  const onClickCategory = () => {
+    setCa(!ca);
+  };
+
+  useEffect(() => {
+    if (!active) {
+      setCa(false);
+    }
+  }, [active]);
 
   return (
     <SDiv active={active}>
       <SNav>
         <SUl>
           <SL>
-            <SButton active={active}>ホーム</SButton>
+            <SLink active={active}>ホーム</SLink>
           </SL>
           <SL>
-            <SButton active={active}>カテゴリー</SButton>
-          </SL>
-          <SL>
-            <SButton active={active}>ご利用ガイド</SButton>
-          </SL>
-          <SL>
-            <SButton active={active}>お問い合わせ</SButton>
-          </SL>
-          <SL>
-            <SButton active={active}>
-              よくあるご質問
+            <SButton
+              active={active}
+              onClick={onClickCategory}
+            >
+              カテゴリー
             </SButton>
+            <SUlx ca={ca}>
+              <SLx>
+                <SLinkx ca={ca}>Tops</SLinkx>
+              </SLx>
+              <SLx>
+                <SLinkx ca={ca}>Pants</SLinkx>
+              </SLx>
+              <SLx>
+                <SLinkx ca={ca}>Outer</SLinkx>
+              </SLx>
+              <SLx>
+                <SLinkx ca={ca}>Headwear</SLinkx>
+              </SLx>
+              <SLx>
+                <SLinkx ca={ca}>Accessories</SLinkx>
+              </SLx>
+            </SUlx>
           </SL>
           <SL>
-            <SButton active={active}>
+            <SLink active={active}>ご利用ガイド</SLink>
+          </SL>
+          <SL>
+            <SLink active={active}>お問い合わせ</SLink>
+          </SL>
+          <SL>
+            <SLink active={active}>よくあるご質問</SLink>
+          </SL>
+          <SL>
+            <SLink active={active}>
               プライバシーポリシー
-            </SButton>
+            </SLink>
           </SL>
           <SL>
-            <SButton active={active}>
+            <SLink active={active}>
               特定商取引法に基づく表示
-            </SButton>
+            </SLink>
           </SL>
         </SUl>
       </SNav>
@@ -69,10 +100,35 @@ const SUl = styled.ul`
   }
 `;
 
+const SUlx = styled(SUl)`
+  && {
+    display: ${(props) => (props.ca ? '' : 'none')};
+  }
+`;
+
 const SL = styled.li`
   && {
     list-style: none;
     border-bottom: 1px solid #6d6d6d;
+  }
+`;
+
+const SLx = styled(SL)`
+  && {
+    background-color: #333537;
+  }
+`;
+
+const SLink = styled(Link)`
+  && {
+    text-decoration: none;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: ${(props) =>
+      props.active && 'opacity 3s ease-out'};
+    opacity: ${(props) => (props.active ? '1' : '0')};
   }
 `;
 
@@ -86,5 +142,13 @@ const SButton = styled.button`
     transition: ${(props) =>
       props.active && 'opacity 3s ease-out'};
     opacity: ${(props) => (props.active ? '1' : '0')};
+  }
+`;
+
+const SLinkx = styled(SLink)`
+  && {
+    transition: ${(props) =>
+      props.ca && 'opacity 3s ease-out'};
+    opacity: ${(props) => (props.ca ? '1' : '0')};
   }
 `;
