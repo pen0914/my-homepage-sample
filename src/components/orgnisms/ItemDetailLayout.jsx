@@ -7,16 +7,20 @@ export const ItemDetailLayout = memo((props) => {
   const { res } = props;
 
   const history = useHistory();
+  const [cart, setCart] = useState([]);
 
   //カートに品番を渡す
-  const [cartItem, setCartItem] = useState([]);
 
-  const onClickCart = (partNumber) => {
-    setCartItem([...cartItem, `${res.partNumber}`]);
+  const onClickCart = () => {
+    setCart([...cart, res.partNumber]);
+
     //読み込み
     //cartページへ移動
-    history.goBack();
-    //データ(state)を渡す
+    history.push({
+      pathname: '../cart',
+      state: { number: res.partNumber, cart: cart }
+    });
+    console.log(cart);
   };
 
   //詳細ページを返す

@@ -62,7 +62,7 @@ export const Drawer = memo((props) => {
             </SLink>
           </SL>
           <SL>
-            <SLink active={active}>
+            <SLink to="/" active={active}>
               特定商取引法に基づく表示
             </SLink>
           </SL>

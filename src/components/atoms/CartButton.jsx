@@ -4,7 +4,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { memo } from 'react';
 export const CartButton = memo(() => {
   return (
-    <SCartLink to="cart">
+    <SCartLink to="../cart">
       <SCartIcon />
     </SCartLink>
   );
