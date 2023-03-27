@@ -1,12 +1,9 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 
 import { ItemContext } from '../providers/ItemProvider';
 
 export const Cart = memo(() => {
   const items = React.useContext(ItemContext);
-
-  //localデータ取得=>
-  //新しいデータを配列に追加=>localに保存
 
   //local呼び出し=>
   const Json = localStorage.getItem('array');
@@ -16,6 +13,7 @@ export const Cart = memo(() => {
   // localStorage.removeItem('array');
 
   //データ取得
+
   // const res = items.find(
   //   (items) => items.partNumber === State.number
   // );
@@ -28,8 +26,12 @@ export const Cart = memo(() => {
   return (
     <>
       <p>カートページです。</p>
-      <div>{}</div>
-      <p>表示されません。</p>
+      <div>
+        <p>品番</p>
+        {display.map((d) => {
+          return <>{d},</>;
+        })}
+      </div>
     </>
   );
 });
