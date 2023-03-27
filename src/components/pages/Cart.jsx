@@ -10,8 +10,6 @@ export const Cart = memo(() => {
   const display = JSON.parse(Json);
   console.log(display);
 
-  // localStorage.removeItem('array');
-
   //データ取得
 
   // const res = items.find(
@@ -22,16 +20,23 @@ export const Cart = memo(() => {
   // setState(Cart);
   // console.log(Cart);
   // console.log(state);
+  const onClick = () => {
+    localStorage.removeItem('array');
+  };
 
   return (
     <>
       <p>カートページです。</p>
+      {/* {{isLoggedIn
+        ? <LogoutButton  />
+        : <LoginButton  />} */}
       <div>
         <p>品番</p>
-        {display.map((d) => {
+        {/* {display.map((d) => {
           return <>{d},</>;
-        })}
+        })} */}
       </div>
+      <button onClick={onClick}>DELETE</button>
     </>
   );
 });
