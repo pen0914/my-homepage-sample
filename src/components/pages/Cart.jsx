@@ -1,31 +1,42 @@
-import React, { memo, useState } from 'react';
+import React, {
+  memo,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState
+} from 'react';
 import { useLocation } from 'react-router-dom';
 import { ItemContext } from '../providers/ItemProvider';
 
 export const Cart = memo(() => {
   const items = React.useContext(ItemContext);
-  const location = useLocation();
+  // const location = useLocation();
+  // const State = location.state;
+  const [state, setState] = useState([]);
 
-  const State = location.state;
+  //localデータ取得=>
+  //新しいデータを配列に追加=>localに保存
 
-  console.log(State.cart);
-  if (!!State) {
-    localStorage.setItem(
-      'number',
-      JSON.stringify(State.cart)
-    );
-    //データ取得
-    // const res = items.find(
-    //   (items) => items.partNumber === State.number
-    // );
-  }
+  //local呼び出し=>
+  const Json = localStorage.getItem('array');
+  const display = JSON.parse(Json);
+  console.log(display);
 
-  const json = localStorage.getItem('number');
-  const Cart = JSON.parse(json);
+  //データ取得
+  // const res = items.find(
+  //   (items) => items.partNumber === State.number
+  // );
+  // }
+  // localStorage.removeItem('number');
+
+  // setState(Cart);
+  // console.log(Cart);
+  // console.log(state);
+
   return (
     <>
       <p>カートページです。</p>
-      <div>{Cart}</div>
+      <div>{}</div>
       <p>表示されません。</p>
     </>
   );

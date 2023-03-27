@@ -5,22 +5,23 @@ import styled from 'styled-components';
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
-
+  const [state, setState] = useState([]);
   const history = useHistory();
-  const [cart, setCart] = useState([]);
 
   //カートに品番を渡す
 
   const onClickCart = () => {
-    setCart([...cart, res.partNumber]);
+    const json = localStorage.getItem('array');
+    const Cart = JSON.parse(json);
+
+    let newData = [...Cart, res.partNumber];
+
+    localStorage.setItem('array', JSON.stringify(newData));
 
     //読み込み
     //cartページへ移動
-    history.push({
-      pathname: '../cart',
-      state: { number: res.partNumber, cart: cart }
-    });
-    console.log(cart);
+
+    history.push('../cart');
   };
 
   //詳細ページを返す
