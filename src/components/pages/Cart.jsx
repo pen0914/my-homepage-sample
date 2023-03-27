@@ -1,18 +1,9 @@
-import React, {
-  memo,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState
-} from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { memo, useState } from 'react';
+
 import { ItemContext } from '../providers/ItemProvider';
 
 export const Cart = memo(() => {
   const items = React.useContext(ItemContext);
-  // const location = useLocation();
-  // const State = location.state;
-  const [state, setState] = useState([]);
 
   //localデータ取得=>
   //新しいデータを配列に追加=>localに保存
@@ -22,12 +13,13 @@ export const Cart = memo(() => {
   const display = JSON.parse(Json);
   console.log(display);
 
+  // localStorage.removeItem('array');
+
   //データ取得
   // const res = items.find(
   //   (items) => items.partNumber === State.number
   // );
   // }
-  // localStorage.removeItem('number');
 
   // setState(Cart);
   // console.log(Cart);

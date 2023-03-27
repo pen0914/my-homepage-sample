@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
-  const [state, setState] = useState([]);
   const history = useHistory();
 
   //カートに品番を渡す
@@ -13,10 +12,18 @@ export const ItemDetailLayout = memo((props) => {
   const onClickCart = () => {
     const json = localStorage.getItem('array');
     const Cart = JSON.parse(json);
-
-    let newData = [...Cart, res.partNumber];
-
-    localStorage.setItem('array', JSON.stringify(newData));
+    if (!!Cart) {
+      const newData = [...Cart, res.partNumber];
+      localStorage.setItem(
+        'array',
+        JSON.stringify(newData)
+      );
+    } else {
+      localStorage.setItem(
+        'array',
+        JSON.stringify([res.partNumber])
+      );
+    }
 
     //読み込み
     //cartページへ移動
