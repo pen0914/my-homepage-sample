@@ -1,15 +1,15 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { CartDataProvider } from './components/providers/CartData';
 import { Router } from './router/Router';
 import './styles.css';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CartDataProvider>
         <Router />
       </CartDataProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
