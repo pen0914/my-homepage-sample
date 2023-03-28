@@ -33,19 +33,15 @@ export const ItemDetailLayout = memo((props) => {
 
   //詳細ページを返す
   return (
-    <>
-      <Spic>
-        <Simage
-          alt={res.name}
-          src={res.image}
-          width="400px"
-        />
+    <SDiv>
+      <SPic>
+        <Simage alt={res.name} src={res.image} />
         <br />
 
         {res.name}
         <br />
         {res.price}
-      </Spic>
+      </SPic>
       <div>
         <div>
           <button
@@ -77,19 +73,28 @@ export const ItemDetailLayout = memo((props) => {
           </Scondtion>
         </Sexplain>
       </div>
-    </>
+    </SDiv>
   );
 });
 
-const Spic = styled.p`
+const SDiv = styled.div`
+  && {
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+const SPic = styled.p`
   && {
     text-align: center;
+    border-bottom: solid 2px rgba(51, 53, 55, 0.9);
   }
 `;
 
 const Simage = styled.img`
   && {
     display: inline-block;
+    width: 55%;
   }
 `;
 
@@ -97,6 +102,7 @@ const Sexplain = styled.div`
   && {
     font-family: 'Karla', sans-serif;
     font-size: 20px;
+    margin: 0 auto;
   }
 `;
 

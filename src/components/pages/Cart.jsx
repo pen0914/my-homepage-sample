@@ -1,5 +1,7 @@
 import React, { memo, useEffect, useState } from 'react';
 import { CartItem } from '../orgnisms/CartItem';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Cart = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,14 +15,14 @@ export const Cart = memo(() => {
       setIsOpen((s) => true);
     }
   }, [display]);
-  console.log(display);
 
   const onClick = () => {
     localStorage.removeItem('array');
+    alert('カート内アイテムを削除しました。');
   };
 
   return (
-    <>
+    <SDiv>
       <p>カートページです。</p>
       <div>
         {isOpen ? (
@@ -31,13 +33,29 @@ export const Cart = memo(() => {
           <p>カートには入っていません</p>
         )}
       </div>
-      <div>
-        <p>品番</p>
-        {/* {display.map((d) => {
-          return <>{d},</>;
-        })} */}
-      </div>
-      <button onClick={onClick}>DELETE</button>
-    </>
+
+      <br />
+      <div>↓カート内アイテムを全て削除↓</div>
+      <SLink to="/">
+        <SButton onClick={onClick}>DELETE</SButton>
+      </SLink>
+    </SDiv>
   );
 });
+
+const SDiv = styled.div`
+  && {
+    height: 500px;
+  }
+`;
+
+const SLink = styled(Link)`
+  && {
+  }
+`;
+
+const SButton = styled.button`
+  && {
+    background-color: #97a791;
+  }
+`;
