@@ -44,11 +44,11 @@ export const ItemDetailLayout = memo((props) => {
       </SPic>
       <div>
         <div>
-          <button
+          <SButton
             onClick={() => onClickCart(res.partNumber)}
           >
             カートに入れる
-          </button>
+          </SButton>
         </div>
         <Sexplain>
           <Sbrand>
@@ -95,6 +95,12 @@ const Simage = styled.img`
   && {
     display: inline-block;
     width: 55%;
+  }
+`;
+
+const SButton = styled.button`
+  && {
+    background-color: #59b9c6;
   }
 `;
 

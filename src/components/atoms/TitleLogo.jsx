@@ -28,5 +28,8 @@ const STitleLink = styled(Link)`
     font-size: 20px;
     color: white;
     font-family: 'Karla', sans-serif;
+    &:hover {
+      color: #e49e61;
+    }
   }
 `;

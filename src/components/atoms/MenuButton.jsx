@@ -39,7 +39,6 @@ const SBiMenu = styled(BiMenu)`
   height: 30px;
 
   &:hover {
-    transition: color 0.3s ease-in;
-    color: red;
+    color: #f6b894;
   }
 `;
