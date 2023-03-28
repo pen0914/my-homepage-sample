@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import styled from 'styled-components';

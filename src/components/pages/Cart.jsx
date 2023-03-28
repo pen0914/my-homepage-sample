@@ -1,25 +1,20 @@
-import React, { memo } from 'react';
-
-import { ItemContext } from '../providers/ItemProvider';
+import React, { memo, useEffect, useState } from 'react';
+import { CartItem } from '../orgnisms/CartItem';
 
 export const Cart = memo(() => {
-  const items = React.useContext(ItemContext);
+  const [isOpen, setIsOpen] = useState(false);
 
   //local呼び出し=>
   const Json = localStorage.getItem('array');
   const display = JSON.parse(Json);
+
+  useEffect(() => {
+    if (display) {
+      setIsOpen((s) => true);
+    }
+  }, [display]);
   console.log(display);
 
-  //データ取得
-
-  // const res = items.find(
-  //   (items) => items.partNumber === State.number
-  // );
-  // }
-
-  // setState(Cart);
-  // console.log(Cart);
-  // console.log(state);
   const onClick = () => {
     localStorage.removeItem('array');
   };
@@ -27,9 +22,15 @@ export const Cart = memo(() => {
   return (
     <>
       <p>カートページです。</p>
-      {/* {{isLoggedIn
-        ? <LogoutButton  />
-        : <LoginButton  />} */}
+      <div>
+        {isOpen ? (
+          display.map((d) => (
+            <CartItem display={d} key={d} />
+          ))
+        ) : (
+          <p>カートには入っていません</p>
+        )}
+      </div>
       <div>
         <p>品番</p>
         {/* {display.map((d) => {

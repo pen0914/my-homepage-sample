@@ -1,26 +1,23 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Drawer = memo((props) => {
   const { active } = props;
   const [ca, setCa] = useState(false);
+
   const onClickCategory = () => {
     setCa(!ca);
   };
-
-  useEffect(() => {
-    if (!active) {
-      setCa(false);
-    }
-  }, [active]);
 
   return (
     <SDiv active={active}>
       <SNav>
         <SUl>
           <SL>
-            <SLink active={active}>ホーム</SLink>
+            <SLink active={active} to="/">
+              ホーム
+            </SLink>
           </SL>
           <SL>
             <SButton
@@ -31,33 +28,49 @@ export const Drawer = memo((props) => {
             </SButton>
             <SUlx ca={ca}>
               <SLx>
-                <SLinkx ca={ca}>Tops</SLinkx>
+                <SLinkx ca={ca} to="/">
+                  Tops
+                </SLinkx>
               </SLx>
               <SLx>
-                <SLinkx ca={ca}>Pants</SLinkx>
+                <SLinkx ca={ca} to="/">
+                  Pants
+                </SLinkx>
               </SLx>
               <SLx>
-                <SLinkx ca={ca}>Outer</SLinkx>
+                <SLinkx ca={ca} to="/">
+                  Outer
+                </SLinkx>
               </SLx>
               <SLx>
-                <SLinkx ca={ca}>Headwear</SLinkx>
+                <SLinkx ca={ca} to="/">
+                  Headwear
+                </SLinkx>
               </SLx>
               <SLx>
-                <SLinkx ca={ca}>Accessories</SLinkx>
+                <SLinkx ca={ca} to="/">
+                  Accessories
+                </SLinkx>
               </SLx>
             </SUlx>
           </SL>
           <SL>
-            <SLink active={active}>ご利用ガイド</SLink>
+            <SLink active={active} to="/">
+              ご利用ガイド
+            </SLink>
           </SL>
           <SL>
-            <SLink active={active}>お問い合わせ</SLink>
+            <SLink active={active} to="/">
+              お問い合わせ
+            </SLink>
           </SL>
           <SL>
-            <SLink active={active}>よくあるご質問</SLink>
+            <SLink active={active} to="/">
+              よくあるご質問
+            </SLink>
           </SL>
           <SL>
-            <SLink active={active}>
+            <SLink active={active} to="/">
               プライバシーポリシー
             </SLink>
           </SL>
