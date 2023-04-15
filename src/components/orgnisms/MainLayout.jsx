@@ -52,7 +52,7 @@ const Div1 = styled.div`
         cubic-bezier(0.215, 0.61, 0.355, 1);
       overflow-y: hidden;
       position: relative;
-      left: ${(props) => (props.active ? '0' : '-60vh')};
+      left: ${(props) => (props.active ? '0' : '-80vh')};
 
       visibility: ${(props) =>
         props.active ? 'visible' : 'hidden'};

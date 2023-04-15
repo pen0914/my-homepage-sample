@@ -36,11 +36,10 @@ export const ItemDetailLayout = memo((props) => {
     <SDiv>
       <SPic>
         <Simage alt={res.name} src={res.image} />
-        <br />
 
-        {res.name}
-        <br />
-        {res.price}
+        <Stag>{res.name}</Stag>
+
+        <Stag>{res.price}</Stag>
       </SPic>
       <div>
         <div>
@@ -84,7 +83,7 @@ const SDiv = styled.div`
   }
 `;
 
-const SPic = styled.p`
+const SPic = styled.div`
   && {
     text-align: center;
     border-bottom: solid 2px rgba(51, 53, 55, 0.9);
@@ -95,12 +94,36 @@ const Simage = styled.img`
   && {
     display: inline-block;
     width: 55%;
+    mix-blend-mode: multiply;
+  }
+`;
+
+const Stag = styled.p`
+  && {
+    margin: 0;
   }
 `;
 
 const SButton = styled.button`
   && {
-    background-color: #59b9c6;
+    width: 157px;
+    height: 30px;
+
+    background-color: linear-gradient(
+      145deg,
+      #f0f0f0,
+      #cacacaca
+    );
+    border-radius: 10px;
+    box-shadow: 8px 8px 12px #898989, -8px -8px 12px #ffffff;
+    border: none;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 8px #000000;
+      color: black;
+    }
+
+    color: #898989;
   }
 `;
 

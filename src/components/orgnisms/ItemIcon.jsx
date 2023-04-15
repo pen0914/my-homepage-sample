@@ -24,30 +24,34 @@ const Sitem = styled.div`
 
     max-width: 250px;
     margin: 20px 10px;
-    box-shadow: 0 0 6px #000000;
+    box-shadow: 18px 18px 36px #898989,
+      -18px -18px 36px #ffffff;
 
-    background-color: #e5e5e5;
-    border-radius: 10px;
+    background-color: #e0e0e0;
+    border-radius: 26px;
     transition: 0.3s ease-in-out;
     &:hover {
       cursor: pointer;
 
-      box-shadow: 0 0 15px #000000;
+      box-shadow: 0 0 8px #000000;
     }
   }
 `;
 
 const Spic = styled.img`
   && {
+    mix-blend-mode: multiply;
     max-width: 100%;
     height: auto;
     display: block;
     border-radius: 10px 10px 0 0;
+    background-color: #e0e0e0;
   }
 `;
 
 const Sexplain = styled.div`
   && {
     height: 120px;
+    border-top: solid 1px #ffffff;
   }
 `;
