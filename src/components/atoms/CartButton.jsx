@@ -18,8 +18,8 @@ const SCartLink = styled(Link)`
     right: 0;
     top: 0;
     z-index: 20;
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
 
     @media (max-width: 600px) {
       height: 70px;

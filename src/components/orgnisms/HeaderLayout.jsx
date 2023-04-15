@@ -11,7 +11,7 @@ export const HeaderLayout = memo((props) => {
   return (
     <SDiv>
       <MenuButton onClick={ClassToggle} />
-      <TitleLogo />
+      <STitleLogo />
       <CartButton />
     </SDiv>
   );
@@ -27,11 +27,19 @@ const SDiv = styled.div`
     left: 0;
     z-index: 10;
     width: 100%;
-    height: 50px;
+    height: 70px;
     @media (max-width: 600px) {
       height: 70px;
     }
 
     background-color: #333537;
+  }
+`;
+
+const STitleLogo = styled(TitleLogo)`
+  && {
+    margin: 0 auto;
+    width: 60%;
+    height: 70px;
   }
 `;

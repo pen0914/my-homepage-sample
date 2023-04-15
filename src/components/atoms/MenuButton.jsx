@@ -19,8 +19,8 @@ const SMenu = styled.button`
     display: block;
     z-index: 20;
 
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     @media (max-width: 600px) {
       height: 70px;
       width: 70px;
