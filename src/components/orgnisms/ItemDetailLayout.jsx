@@ -6,13 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import {
-  Pagination,
-  Navigation,
-  Autoplay,
-  Mousewheel,
-  Keyboard
-} from 'swiper';
+import { Pagination, Navigation, Mousewheel } from 'swiper';
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
@@ -53,7 +47,6 @@ export const ItemDetailLayout = memo((props) => {
           navigation={true}
           slidesPerView={1}
           spaceBetween={40}
-          // mousewheel={true}
           modules={[Navigation, Pagination, Mousewheel]}
         >
           <SwiperSlide>
@@ -112,7 +105,6 @@ const SDiv = styled.div`
 
 const SPic = styled.div`
   && {
-    /* height: 200px; */
     width: 47%;
     margin: 0 auto;
     text-align: center;
