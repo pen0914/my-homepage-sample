@@ -8,10 +8,10 @@ export const ItemIcon = memo((props) => {
     <Sitem onClick={() => onClick(id)}>
       <Spic src={item.image} alt="" />
       <Sexplain>
-        <p>{`【${item.brand}】`}</p>
-        <p>{item.name}</p>
+        <SP>{`【${item.brand}】`}</SP>
+        <SP>{item.name}</SP>
 
-        <p>{item.price}</p>
+        <SP>{item.price}</SP>
       </Sexplain>
     </Sitem>
   );
@@ -32,7 +32,7 @@ const Sitem = styled.div`
     transition: 0.3s ease-in-out;
     &:hover {
       cursor: pointer;
-
+      text-shadow: -3px -3px 7px #898989;
       box-shadow: 0 0 8px #000000;
     }
   }
@@ -53,5 +53,12 @@ const Sexplain = styled.div`
   && {
     height: 120px;
     border-top: solid 1px #ffffff;
+  }
+`;
+
+const SP = styled.p`
+  && {
+    &:hover {
+    }
   }
 `;

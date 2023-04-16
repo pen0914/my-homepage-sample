@@ -34,9 +34,6 @@ const STitleLink = styled(Link)`
     font-size: 20px;
     color: white;
     font-family: 'Karla', sans-serif;
-    &:hover {
-      color: #e49e61;
-    }
   }
 `;
 
@@ -44,5 +41,7 @@ const SLogo = styled.img`
   && {
     max-width: 100%;
     height: 100%;
+    &:hover {
+    }
   }
 `;

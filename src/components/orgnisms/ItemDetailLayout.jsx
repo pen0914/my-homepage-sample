@@ -1,7 +1,18 @@
 import React, { memo } from 'react';
+import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
-import styled from 'styled-components';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import {
+  Pagination,
+  Navigation,
+  Autoplay,
+  Mousewheel,
+  Keyboard
+} from 'swiper';
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
@@ -35,13 +46,29 @@ export const ItemDetailLayout = memo((props) => {
   return (
     <SDiv>
       <SPic>
-        <Simage alt={res.name} src={res.image} />
+        <Swiper
+          pagination={{
+            type: 'fraction'
+          }}
+          navigation={true}
+          slidesPerView={1}
+          spaceBetween={40}
+          // mousewheel={true}
+          modules={[Navigation, Pagination, Mousewheel]}
+        >
+          <SwiperSlide>
+            <Simage alt={res.name} src={res.image} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Simage alt={res.name} src={res.image} />
+          </SwiperSlide>
+        </Swiper>
 
         <Stag>{res.name}</Stag>
 
         <Stag>{res.price}</Stag>
       </SPic>
-      <div>
+      <SDetail>
         <div>
           <SButton
             onClick={() => onClickCart(res.partNumber)}
@@ -71,7 +98,7 @@ export const ItemDetailLayout = memo((props) => {
             <p>{res.condition}</p>
           </Scondtion>
         </Sexplain>
-      </div>
+      </SDetail>
     </SDiv>
   );
 });
@@ -85,6 +112,9 @@ const SDiv = styled.div`
 
 const SPic = styled.div`
   && {
+    /* height: 200px; */
+    width: 47%;
+    margin: 0 auto;
     text-align: center;
     border-bottom: solid 2px rgba(51, 53, 55, 0.9);
   }
@@ -93,7 +123,8 @@ const SPic = styled.div`
 const Simage = styled.img`
   && {
     display: inline-block;
-    width: 55%;
+    max-width: 55%;
+
     mix-blend-mode: multiply;
   }
 `;
@@ -101,6 +132,12 @@ const Simage = styled.img`
 const Stag = styled.p`
   && {
     margin: 0;
+  }
+`;
+
+const SDetail = styled.div`
+  & {
+    margin: 0 auto;
   }
 `;
 
