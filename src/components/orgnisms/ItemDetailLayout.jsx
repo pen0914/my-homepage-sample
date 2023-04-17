@@ -46,7 +46,7 @@ export const ItemDetailLayout = memo((props) => {
           }}
           navigation={true}
           slidesPerView={1}
-          spaceBetween={40}
+          spaceBetween={30}
           modules={[Navigation, Pagination, Mousewheel]}
         >
           <SwiperSlide>
