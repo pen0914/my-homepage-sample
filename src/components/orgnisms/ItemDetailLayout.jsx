@@ -35,14 +35,16 @@ export const ItemDetailLayout = memo((props) => {
   return (
     <SDiv>
       <SPic>
-        {/* <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-          </div>
-        </div> */}
-        <SImage alt={res.id} src={res.image} />
+        <SSlider>
+          <SImageMoveButton></SImageMoveButton>
+          <SSLiderFrame>
+            <SImage alt={res.id} src={res.image} />
+            <SImage2 alt={res.id} src={res.image} />
+            <SImage alt={res.id} src={res.image} />
+          </SSLiderFrame>
+          <SImageMoveButton></SImageMoveButton>
+        </SSlider>
+
         <Stag>{res.name}</Stag>
 
         <Stag>{res.price}</Stag>
@@ -98,11 +100,41 @@ const SPic = styled.div`
   }
 `;
 
+const SSlider = styled.div`
+  && {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+`;
+
+const SImageMoveButton = styled.button`
+  && {
+    z-index: 10;
+  }
+`;
+
+const SSLiderFrame = styled.div`
+  && {
+    display: flex;
+    position: relative;
+    /* right: 100%; */
+  }
+`;
+
 const SImage = styled.img`
   && {
     display: inline-block;
-    max-width: 55%;
+    width: 100%;
+    mix-blend-mode: multiply;
+  }
+`;
 
+const SImage2 = styled.img`
+  && {
+    display: inline-block;
+    width: 100%;
     mix-blend-mode: multiply;
   }
 `;
