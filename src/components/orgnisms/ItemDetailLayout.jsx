@@ -2,11 +2,11 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Pagination, Navigation, Mousewheel } from 'swiper';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+// import 'swiper/css/navigation';
+// import { Pagination, Navigation, Mousewheel } from 'swiper';
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;

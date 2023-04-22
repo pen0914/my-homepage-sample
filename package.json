@@ -1,11 +1,8 @@
 {
-  "name": "my-homepage-sample",
+  "name": "ecsite",
   "version": "1.0.0",
-  "description": "服のサイト",
-  "keywords": [
-    "react",
-    "atarter"
-  ],
+  "description": "個人開発で古着(自分)のECサイトを作成しています。",
+  "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "react": "^17.0.1",
@@ -13,9 +10,7 @@
     "react-icons": "4.7.1",
     "react-router-dom": "5.3.0",
     "react-scripts": "4.0.0",
-    "styled-components": "5.3.2",
-    "swiper": "9.1.1",
-    "swiper-react": "1.0.0"
+    "styled-components": "5.3.2"
   },
   "devDependencies": {
     "typescript": "4.1.3"
