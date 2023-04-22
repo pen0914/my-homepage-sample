@@ -1,12 +1,7 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-// import 'swiper/css/navigation';
-// import { Pagination, Navigation, Mousewheel } from 'swiper';
+import '../../styles.css';
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
@@ -40,23 +35,14 @@ export const ItemDetailLayout = memo((props) => {
   return (
     <SDiv>
       <SPic>
-        <Swiper
-          pagination={{
-            type: 'fraction'
-          }}
-          navigation={true}
-          slidesPerView={1}
-          spaceBetween={30}
-          modules={[Navigation, Pagination, Mousewheel]}
-        >
-          <SwiperSlide>
-            <Simage alt={res.name} src={res.image} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Simage alt={res.name} src={res.image} />
-          </SwiperSlide>
-        </Swiper>
-
+        {/* <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+        </div> */}
+        <SImage alt={res.id} src={res.image} />
         <Stag>{res.name}</Stag>
 
         <Stag>{res.price}</Stag>
@@ -105,14 +91,14 @@ const SDiv = styled.div`
 
 const SPic = styled.div`
   && {
-    width: 47%;
+    width: 60%;
     margin: 0 auto;
     text-align: center;
     border-bottom: solid 2px rgba(51, 53, 55, 0.9);
   }
 `;
 
-const Simage = styled.img`
+const SImage = styled.img`
   && {
     display: inline-block;
     max-width: 55%;
