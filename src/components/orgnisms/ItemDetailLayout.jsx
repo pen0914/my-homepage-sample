@@ -46,7 +46,7 @@ export const ItemDetailLayout = memo((props) => {
           >
             ＜
           </SImageMoveButton>
-          <SSLiderFrame>
+          <SSLiderFrame moveWay={way}>
             <SImage alt={res.id} src={res.image} />
             <SImage2 alt={res.id} src={res.image} />
             <SImage alt={res.id} src={res.image} />
@@ -124,7 +124,7 @@ const SSlider = styled.div`
 
 const SImageMoveButton = styled.button`
   && {
-    z-index: 10;
+    z-index: 5;
   }
 `;
 
@@ -132,7 +132,7 @@ const SSLiderFrame = styled.div`
   && {
     display: flex;
     position: relative;
-    /* right: 100%; */
+    right: ${(props) => (props.moveWay ? '-100%' : '100%')};
   }
 `;
 
