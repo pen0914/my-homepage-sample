@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import '../../styles.css';
@@ -6,6 +6,7 @@ import '../../styles.css';
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
   const history = useHistory();
+  const [way, setWay] = useState(0);
 
   //カートに品番を渡す
 
@@ -31,18 +32,30 @@ export const ItemDetailLayout = memo((props) => {
     history.push('../cart');
   };
 
+  const onClickMove = (boolean) => {
+    setWay(boolean);
+  };
+
   //詳細ページを返す
   return (
     <SDiv>
       <SPic>
         <SSlider>
-          <SImageMoveButton>＜</SImageMoveButton>
+          <SImageMoveButton
+            onClick={() => onClickMove(false)}
+          >
+            ＜
+          </SImageMoveButton>
           <SSLiderFrame>
             <SImage alt={res.id} src={res.image} />
             <SImage2 alt={res.id} src={res.image} />
             <SImage alt={res.id} src={res.image} />
           </SSLiderFrame>
-          <SImageMoveButton>＞</SImageMoveButton>
+          <SImageMoveButton
+            onClick={() => onClickMove(true)}
+          >
+            ＞
+          </SImageMoveButton>
         </SSlider>
 
         <Stag>{res.name}</Stag>
