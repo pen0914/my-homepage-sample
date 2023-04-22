@@ -36,13 +36,13 @@ export const ItemDetailLayout = memo((props) => {
     <SDiv>
       <SPic>
         <SSlider>
-          <SImageMoveButton></SImageMoveButton>
+          <SImageMoveButton>＜</SImageMoveButton>
           <SSLiderFrame>
             <SImage alt={res.id} src={res.image} />
             <SImage2 alt={res.id} src={res.image} />
             <SImage alt={res.id} src={res.image} />
           </SSLiderFrame>
-          <SImageMoveButton></SImageMoveButton>
+          <SImageMoveButton>＞</SImageMoveButton>
         </SSlider>
 
         <Stag>{res.name}</Stag>
