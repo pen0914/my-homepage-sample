@@ -6,7 +6,7 @@ import '../../styles.css';
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
   const history = useHistory();
-  const [way, setWay] = useState(0);
+  const [count, setCount] = useState(0);
 
   //カートに品番を渡す
 
@@ -32,28 +32,36 @@ export const ItemDetailLayout = memo((props) => {
     history.push('../cart');
   };
 
-  const onClickMove = (boolean) => {
-    setWay(boolean);
+  const onClickUp = () => {
+    if (count < 2) {
+      let total = count + 1;
+      setCount(total);
+    }
   };
+
+  const onClickDown = () => {
+    if (count > 0) {
+      let total = count - 1;
+      setCount(total);
+    }
+  };
+
+  console.log(count);
 
   //詳細ページを返す
   return (
     <SDiv>
       <SPic>
         <SSlider>
-          <SImageMoveButton
-            onClick={() => onClickMove(false)}
-          >
+          <SImageMoveButton onClick={onClickDown}>
             ＜
           </SImageMoveButton>
-          <SSLiderFrame moveWay={way}>
+          <SSLiderFrame count={count}>
             <SImage alt={res.id} src={res.image} />
             <SImage2 alt={res.id} src={res.image} />
             <SImage alt={res.id} src={res.image} />
           </SSLiderFrame>
-          <SImageMoveButton
-            onClick={() => onClickMove(true)}
-          >
+          <SImageMoveButton onClick={onClickUp}>
             ＞
           </SImageMoveButton>
         </SSlider>
@@ -132,7 +140,8 @@ const SSLiderFrame = styled.div`
   && {
     display: flex;
     position: relative;
-    right: ${(props) => (props.moveWay ? '-100%' : '100%')};
+    right: calc(${(props) => props.count * 320}px);
+    transition: 0.5s 0s ease-in-out;
   }
 `;
 

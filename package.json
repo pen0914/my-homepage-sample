@@ -1,7 +1,7 @@
 {
-  "name": "ecsite",
+  "name": "ec",
   "version": "1.0.0",
-  "description": "個人開発で古着(自分)のECサイトを作成しています。",
+  "description": "作ってみたかった服のECサイトをフロントエンド部分のみで作成しています。",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
