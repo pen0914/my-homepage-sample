@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import '../../styles.css';
@@ -7,7 +7,8 @@ export const ItemDetailLayout = memo((props) => {
   const { res } = props;
   const history = useHistory();
   const [count, setCount] = useState(0);
-
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
   //カートに品番を渡す
 
   const onClickCart = () => {
@@ -32,6 +33,7 @@ export const ItemDetailLayout = memo((props) => {
     history.push('../cart');
   };
 
+  //画像スライドのカウント
   const onClickUp = () => {
     if (count < 2) {
       let total = count + 1;
@@ -46,7 +48,13 @@ export const ItemDetailLayout = memo((props) => {
     }
   };
 
-  console.log(count);
+  useEffect(() => {
+    const image = document.getElementById(res.id);
+    const Wid = image.width;
+    const Hei = image.height;
+    setWidth(Wid);
+    setHeight(Hei);
+  }, []);
 
   //詳細ページを返す
   return (
@@ -56,8 +64,16 @@ export const ItemDetailLayout = memo((props) => {
           <SImageMoveButton onClick={onClickDown}>
             ＜
           </SImageMoveButton>
-          <SSLiderFrame count={count}>
-            <SImage alt={res.id} src={res.image} />
+          <SSLiderFrame
+            count={count}
+            width={width}
+            height={height}
+          >
+            <SImage
+              id={res.id}
+              alt={res.id}
+              src={res.image}
+            />
             <SImage2 alt={res.id} src={res.image} />
             <SImage alt={res.id} src={res.image} />
           </SSLiderFrame>
@@ -140,7 +156,7 @@ const SSLiderFrame = styled.div`
   && {
     display: flex;
     position: relative;
-    right: calc(${(props) => props.count * 320}px);
+    right: calc(${(props) => props.count * props.width}px);
     transition: 0.5s 0s ease-in-out;
   }
 `;
