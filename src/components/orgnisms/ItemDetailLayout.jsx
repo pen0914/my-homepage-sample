@@ -2,13 +2,15 @@ import React, { memo, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import '../../styles.css';
+import { useMeasure } from '../../hooks/useMeasure';
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
   const history = useHistory();
   const [count, setCount] = useState(0);
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
+  // const [size, setSize] = useState(0);
+  const { MeasureImage, width } = useMeasure();
+
   //カートに品番を渡す
 
   const onClickCart = () => {
@@ -49,12 +51,11 @@ export const ItemDetailLayout = memo((props) => {
   };
 
   useEffect(() => {
-    const image = document.getElementById(res.id);
-    const Wid = image.width;
-    const Hei = image.height;
-    setWidth(Wid);
-    setHeight(Hei);
-  }, []);
+    //windowサイズ変更毎にレンダリングしたい
+    // let windowWidth = window.innerWidth;
+    // setSize(windowWidth);
+    MeasureImage(res.id);
+  }, [MeasureImage]);
 
   //詳細ページを返す
   return (
@@ -64,11 +65,7 @@ export const ItemDetailLayout = memo((props) => {
           <SImageMoveButton onClick={onClickDown}>
             ＜
           </SImageMoveButton>
-          <SSLiderFrame
-            count={count}
-            width={width}
-            height={height}
-          >
+          <SSLiderFrame count={count} width={width}>
             <SImage
               id={res.id}
               alt={res.id}
