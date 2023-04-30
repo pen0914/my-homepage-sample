@@ -89,14 +89,13 @@ const SDiv = styled.div`
   && {
     width: 100%;
 
-    @media not all and (max-width: 600px) {
+    /* @media not all and (max-width: 600px) {
       display: flex;
       background-color: #333537;
-    }
-    @media (max-width: 600px) {
-      background-color: rgba(51, 53, 55, 0.9);
-      height: 930px;
-    }
+    } */
+
+    background-color: rgba(51, 53, 55, 0.9);
+    height: 930px;
   }
 `;
 

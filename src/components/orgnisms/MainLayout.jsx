@@ -34,7 +34,7 @@ const SDiv = styled.div`
 
 const Div1 = styled.div`
   && {
-    @media all and (max-width: 600px) {
+    
       position: fixed;
       width: 100%;
       inset: ${(props) => (props.active ? '0' : '')};
@@ -43,10 +43,10 @@ const Div1 = styled.div`
       transition: all 0.6s
         cubic-bezier(0.215, 0.61, 0.355, 1);
       top: ${(props) => (props.active ? '70px' : '-930px')};
-      z-index: 5;
-    }
+      z-index: 6;
+    
 
-    @media not all and (max-width: 600px) {
+    /* @media not all and (max-width: 600px) {
       display: flex;
       transition: all 0.6s
         cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -56,21 +56,21 @@ const Div1 = styled.div`
 
       visibility: ${(props) =>
         props.active ? 'visible' : 'hidden'};
-    }
+    } */
   }
 `;
 
 const Div2 = styled.div`
   && {
-    @media all and (max-width: 600px) {
+  
       top: ${(props) =>
         props.active
           ? `${(props.position - 70) * -1}px`
           : ``};
       position: ${(props) => (props.active ? 'fixed' : '')};
-    }
-    @media not all and (max-width: 600px) {
+    
+    /* @media not all and (max-width: 600px) {
       flex-basis: ${(props) => (props.active ? '75%' : '')};
-    }
+    } */
   }
 `;
