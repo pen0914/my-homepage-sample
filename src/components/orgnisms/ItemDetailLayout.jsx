@@ -150,6 +150,9 @@ const SImageMoveButton = styled.button`
   && {
     z-index: 5;
     background-color: #e0e0e0;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
   }
 `;
 
