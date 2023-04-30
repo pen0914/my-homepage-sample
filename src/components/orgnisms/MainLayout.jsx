@@ -44,7 +44,7 @@ const Div1 = styled.div`
         cubic-bezier(0.215, 0.61, 0.355, 1);
       top: ${(props) => (props.active ? '70px' : '-930px')};
       z-index: 6;
-    
+   
 
     /* @media not all and (max-width: 600px) {
       display: flex;

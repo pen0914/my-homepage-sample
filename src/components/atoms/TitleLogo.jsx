@@ -19,6 +19,9 @@ export const TitleLogo = memo((props) => {
 //タイトル部分のCSS
 const SWrapper = styled.div`
   && {
+    @media (min-width: 600px) {
+      text-align: left;
+    }
     position: relative;
     top: 50%;
     transform: translate(0, -50%);
@@ -28,8 +31,6 @@ const SWrapper = styled.div`
 
 const STitleLink = styled(Link)`
   && {
-    @media (max-width: 600px) {
-    }
     text-decoration: none;
     font-size: 20px;
     color: white;

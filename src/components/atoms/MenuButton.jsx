@@ -3,9 +3,9 @@ import { BiMenu } from 'react-icons/bi';
 import { memo } from 'react';
 
 export const MenuButton = memo((props) => {
-  const { onClick } = props;
+  const { onClick, className } = props;
   return (
-    <SMenu onClick={onClick}>
+    <SMenu onClick={onClick} className={className}>
       <SBiMenu />
     </SMenu>
   );
