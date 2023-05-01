@@ -18,7 +18,7 @@ export const MainLayout = (props) => {
 
 const SP = styled.p`
   && {
-    height: 50px;
+    height: 70px;
     @media (max-width: 600px) {
       height: 70px;
     }

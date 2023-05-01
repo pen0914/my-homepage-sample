@@ -128,10 +128,16 @@ const SDiv = styled.div`
 
 const SPic = styled.div`
   && {
-    width: 60%;
     margin: 0 auto;
     text-align: center;
     border-bottom: solid 2px rgba(51, 53, 55, 0.9);
+    @media (min-width: 600px) {
+      width: 60%;
+    }
+
+    @media (max-width: 600px) {
+      height: 200px;
+    }
   }
 `;
 
@@ -139,9 +145,14 @@ const SSlider = styled.div`
   && {
     display: flex;
 
-    width: 60%;
     margin: 0 auto;
     overflow-x: hidden;
+    @media (min-width: 600px) {
+      width: 60%;
+    }
+    @media (max-width: 600px) {
+      height: 100%;
+    }
   }
 `;
 
@@ -161,12 +172,16 @@ const SSLiderFrame = styled.div`
     position: relative;
     right: calc(${(props) => props.count * props.width}px);
     transition: 0.5s 0s ease-in-out;
+    @media (max-width: 600px) {
+      width: 200px;
+      margin: 0 auto;
+    }
   }
 `;
 
 const SImage = styled.img`
   && {
-    display: inline-block;
+    display: block;
     width: 100%;
     mix-blend-mode: multiply;
   }
@@ -174,7 +189,7 @@ const SImage = styled.img`
 
 const SImage2 = styled.img`
   && {
-    display: inline-block;
+    display: block;
     width: 100%;
     mix-blend-mode: multiply;
   }
