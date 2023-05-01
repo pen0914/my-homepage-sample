@@ -13,12 +13,12 @@ export const FlowMenu = (props) => {
           <h5>Category</h5>
           <SMore>
             <SDl>
-              <dt>Outer</dt>
+              <SDt>Outer</SDt>
               <SDd>light-</SDd>
               <SDd>heavy-</SDd>
             </SDl>
             <SDl>
-              <dt>Tops</dt>
+              <SDt>Tops</SDt>
               <SDd>t-shirt</SDd>
               <SDd>vest</SDd>
               <SDd>shirt</SDd>
@@ -26,7 +26,7 @@ export const FlowMenu = (props) => {
               <SDd>knit</SDd>
             </SDl>
             <SDl>
-              <dt>Bottoms</dt>
+              <SDt>Bottoms</SDt>
               <SDd>pants</SDd>
               <SDd>skirt</SDd>
             </SDl>
@@ -36,22 +36,22 @@ export const FlowMenu = (props) => {
           <h5>Goods</h5>
           <SMore>
             <SDl>
-              <dt>Cap&Hat</dt>
+              <SDt>Cap&Hat</SDt>
               <SDd>cap</SDd>
               <SDd>hat</SDd>
               <SDd>beanie</SDd>
             </SDl>
             <SDl>
-              <dt>Shoes</dt>
+              <SDt>Shoes</SDt>
             </SDl>
             <SDl>
-              <dt>Accessory</dt>
+              <SDt>Accessory</SDt>
               <SDd>ring</SDd>
               <SDd>necklace</SDd>
               <SDd>pins</SDd>
             </SDl>
             <SDl>
-              <dt>Bag</dt>
+              <SDt>Bag</SDt>
             </SDl>
           </SMore>
         </SLi>
@@ -97,6 +97,9 @@ const SLi = styled.li`
     background-color: #333537;
 
     color: #e0e0e0;
+    :hover {
+      color: rgb(254, 128, 2);
+    }
   }
 `;
 
@@ -108,11 +111,9 @@ const SMore = styled.div`
     top: 70px;
     left: 0;
     height: 210px;
-    background-color: gray;
+    background-color: #333537;
     ${SLi}:hover & {
       display: flex;
-
-      background-color: black;
     }
   }
 `;
@@ -120,11 +121,21 @@ const SMore = styled.div`
 const SDl = styled.dl`
   && {
     margin: 20px 15px 0 15px;
+    color: #e0e0e0;
   }
 `;
 
 const SDd = styled.dd`
   && {
     margin-left: 0;
+  }
+`;
+
+const SDt = styled.dt`
+  && {
+    font-weight: bold;
+    :hover {
+      color: rgb(254, 128, 2);
+    }
   }
 `;
