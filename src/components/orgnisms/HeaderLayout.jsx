@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 import styled from 'styled-components';
-import { MenuButton } from '../atoms/MenuButton';
+import { DrawerButton } from '../atoms/DrawerButton';
 import { TitleLogo } from '../atoms/TitleLogo';
 import { CartButton } from '../atoms/CartButton';
 import { FlowMenu } from '../atoms/FlowMenu';
@@ -11,7 +11,7 @@ export const HeaderLayout = memo((props) => {
 
   return (
     <SDiv>
-      <SMenuButton onClick={ClassToggle} />
+      <SDrawerButton onClick={ClassToggle} />
       <STitle>
         <STitleLogo />
         <SFlowMenu />
@@ -37,7 +37,7 @@ const SDiv = styled.div`
   }
 `;
 
-const SMenuButton = styled(MenuButton)`
+const SDrawerButton = styled(DrawerButton)`
   && {
     @media (min-width: 600px) {
       display: none;

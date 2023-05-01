@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { BiMenu } from 'react-icons/bi';
 import { memo } from 'react';
 
-export const MenuButton = memo((props) => {
+export const DrawerButton = memo((props) => {
   const { onClick, className } = props;
   return (
     <SMenu onClick={onClick} className={className}>
