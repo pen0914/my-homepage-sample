@@ -73,3 +73,8 @@ const SFlowMenu = styled(FlowMenu)`
     }
   }
 `;
+
+const SSecond = styled.div`
+  && {
+  }
+`;
