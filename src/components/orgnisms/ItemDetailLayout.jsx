@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import '../../styles.css';
 import { useMeasure } from '../../hooks/useMeasure';
+import { DetailList } from '../atoms/DetailList';
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;
@@ -93,26 +94,26 @@ export const ItemDetailLayout = memo((props) => {
           </SButton>
         </div>
         <Sexplain>
-          <Sbrand>
-            <p>[brand]</p>
-            <p>{res.brand}</p>
-          </Sbrand>
-          <Scategory>
-            <p>[category]</p>
-            <p>{res.category}</p>
-          </Scategory>
-          <Sdetail>
-            <p>[detail]</p>
-            <p>{res.detail}</p>
-          </Sdetail>
-          <Ssize>
-            <p>[size]</p>
-            <p>{res.size}</p>
-          </Ssize>
-          <Scondtion>
-            <p>[condition]</p>
-            <p>{res.condition}</p>
-          </Scondtion>
+          <DetailList
+            category={res.brand}
+            heading={'brand'}
+          />
+          <DetailList
+            category={res.category}
+            heading={'category'}
+          />
+          <DetailList
+            category={res.detail}
+            heading={'detail'}
+          />
+          <DetailList
+            category={res.size}
+            heading={'size'}
+          />
+          <DetailList
+            category={res.condition}
+            heading={'condition'}
+          />
         </Sexplain>
       </SDetail>
     </SDiv>
@@ -222,25 +223,3 @@ const Sexplain = styled.div`
     margin: 0 auto;
   }
 `;
-
-const Sbrand = styled.div`
-  && {
-  }
-`;
-
-const Scategory = styled.div`
-  && {
-  }
-`;
-
-const Sdetail = styled.div`
-  && {
-  }
-`;
-
-const Ssize = styled.div`
-  && {
-  }
-`;
-
-const Scondtion = styled.div``;
