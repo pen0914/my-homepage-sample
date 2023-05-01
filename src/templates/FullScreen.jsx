@@ -1,6 +1,6 @@
 import { memo, useEffect, useState } from 'react';
 import { Drawer } from '../components/personalParts/drawer/Drawer';
-import { HeaderLayout } from '../components/personalParts/header/HeaderLayout';
+import { HeaderLayout } from '../components/layout/HeaderLayout';
 
 import { MainLayout } from '../components/layout/MainLayout';
 import { useScroll } from '../hooks/useScroll';
