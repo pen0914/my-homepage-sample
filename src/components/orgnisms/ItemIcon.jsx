@@ -34,6 +34,7 @@ const Sitem = styled.div`
       cursor: pointer;
       text-shadow: -3px -3px 7px #898989;
       box-shadow: 0 0 8px #000000;
+      color: rgb(254, 128, 2);
     }
   }
 `;

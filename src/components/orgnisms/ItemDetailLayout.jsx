@@ -35,7 +35,7 @@ export const ItemDetailLayout = memo((props) => {
     history.push('../cart');
   };
 
-  //画像スライドのカウント
+  //画像スライドのカウント　↓↓
   const onClickUp = () => {
     if (count < 2) {
       let total = count + 1;
@@ -49,6 +49,7 @@ export const ItemDetailLayout = memo((props) => {
       setCount(total);
     }
   };
+  //                    ↑↑
 
   useEffect(() => {
     //windowサイズ変更毎にレンダリングしたい
@@ -137,6 +138,7 @@ const SPic = styled.div`
 const SSlider = styled.div`
   && {
     display: flex;
+
     width: 60%;
     margin: 0 auto;
     overflow-x: hidden;

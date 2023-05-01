@@ -34,6 +34,7 @@ const SButton = styled.button`
 
     color: #e0e0e0;
     &:hover {
+      color: rgb(254, 128, 2);
     }
   }
 `;
