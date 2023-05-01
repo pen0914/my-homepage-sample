@@ -1,10 +1,10 @@
 import React from 'react';
-import { Home } from '../components/pages/Home';
-import { Cart } from '../components/pages/Cart';
-import { Page404 } from '../components/pages/Page404';
-import { ItemDetail } from '../components/pages/ItemDetail';
+import { Home } from '../pages/Home';
+import { Cart } from '../pages/Cart';
+import { Page404 } from '../pages/Page404';
+import { ItemDetail } from '../pages/ItemDetail';
 
-export const HomeRoutes = [
+export const MainRoutes = [
   { path: '/', exact: true, children: <Home /> },
 
   //ページ遷移方法を探す

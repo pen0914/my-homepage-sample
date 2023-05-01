@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState } from 'react';
-import { CartItem } from '../orgnisms/CartItem';
+import { CartItem } from '../components/personalParts/cart/CartItem';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 

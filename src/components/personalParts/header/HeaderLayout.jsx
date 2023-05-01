@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 
 import styled from 'styled-components';
-import { DrawerButton } from '../atoms/DrawerButton';
-import { TitleLogo } from '../atoms/TitleLogo';
-import { CartButton } from '../atoms/CartButton';
-import { FlowMenu } from '../atoms/FlowMenu';
+import { DrawerButton } from '../header/DrawerButton';
+import { TitleLogo } from '../header/TitleLogo';
+import { CartButton } from '../header/CartButton';
+import { FlowMenu } from '../header/FlowMenu';
 
 export const HeaderLayout = memo((props) => {
   const { ClassToggle } = props;

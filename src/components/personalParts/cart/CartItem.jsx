@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { ItemContext } from '../providers/ItemProvider';
+import { ItemContext } from '../../../providers/ItemProvider';
 
 export const CartItem = (props) => {
   const { display } = props;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { ItemContext } from '../providers/ItemProvider';
 
-import { ItemIcon } from '../orgnisms/ItemIcon';
+import { ItemIcon } from '../components/personalParts/home/ItemIcon';
 
 export const Home = memo(() => {
   //データを取得

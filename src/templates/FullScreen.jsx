@@ -1,11 +1,11 @@
 import { memo, useEffect, useState } from 'react';
-import { Drawer } from '../molecules/Drawer';
-import { HeaderLayout } from '../orgnisms/HeaderLayout';
+import { Drawer } from '../components/personalParts/drawer/Drawer';
+import { HeaderLayout } from '../components/personalParts/header/HeaderLayout';
 
-import { MainLayout } from '../orgnisms/MainLayout';
-import { useScroll } from '../../hooks/useScroll';
+import { MainLayout } from '../components/layout/MainLayout';
+import { useScroll } from '../hooks/useScroll';
 
-export const FullScreenLayout = memo((props) => {
+export const FullScreen = memo((props) => {
   const { children } = props;
   const { scrollPosition, PositionUp } = useScroll();
   const [active, setActive] = useState(false);

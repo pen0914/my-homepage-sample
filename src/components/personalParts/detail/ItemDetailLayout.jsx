@@ -1,9 +1,8 @@
 import React, { memo, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import '../../styles.css';
-import { useMeasure } from '../../hooks/useMeasure';
-import { DetailList } from '../atoms/DetailList';
+import { useMeasure } from '../../../hooks/useMeasure';
+import { DetailList } from '../detail/DetailList';
 
 export const ItemDetailLayout = memo((props) => {
   const { res } = props;

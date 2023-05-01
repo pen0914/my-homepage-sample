@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { ItemDetailLayout } from '../orgnisms/ItemDetailLayout';
+import { ItemDetailLayout } from '../components/personalParts/detail/ItemDetailLayout';
 import { ItemContext } from '../providers/ItemProvider';
 
 export const ItemDetail = memo(() => {
