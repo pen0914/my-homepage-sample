@@ -14,8 +14,8 @@ export const FlowMenu = (props) => {
           <SMore>
             <SDl>
               <SDt>Outer</SDt>
-              <SDd>light-</SDd>
-              <SDd>heavy-</SDd>
+              <SDd>light-outer</SDd>
+              <SDd>heavy-outer</SDd>
             </SDl>
             <SDl>
               <SDt>Tops</SDt>
@@ -109,7 +109,7 @@ const SMore = styled.div`
     position: absolute;
     top: 70px;
     left: 0;
-    height: 210px;
+    height: 170px;
 
     background-color: #333537;
     ${SLi}:hover & {
