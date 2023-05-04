@@ -68,6 +68,11 @@ const STitleLogo = styled(TitleLogo)`
 
 const SFlowMenu = styled(FlowMenu)`
   && {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
     @media (max-width: 600px) {
       display: none;
     }

@@ -72,9 +72,7 @@ export const FlowMenu = (props) => {
 const SDiv = styled.div`
   && {
     margin: 0;
-    position: relative;
-    margin-left: 30px;
-    margin-right: 10px;
+    width: 100vw;
     height: 70px;
     display: flex;
     justify-content: space-between;
@@ -83,7 +81,8 @@ const SDiv = styled.div`
 
 const SUl = styled.ul`
   && {
-    margin: 0;
+    margin: 0 auto;
+    padding: 0;
     display: flex;
   }
 `;
@@ -106,11 +105,12 @@ const SLi = styled.li`
 const SMore = styled.div`
   && {
     display: none;
-    width: 100vw;
+    width: 100%;
     position: absolute;
     top: 70px;
     left: 0;
     height: 210px;
+
     background-color: #333537;
     ${SLi}:hover & {
       display: flex;
@@ -120,8 +120,10 @@ const SMore = styled.div`
 
 const SDl = styled.dl`
   && {
-    margin: 20px 15px 0 15px;
+    position: relative;
+    margin: 10px 15px 0 15px;
     color: #e0e0e0;
+    left: 30vw;
   }
 `;
 
