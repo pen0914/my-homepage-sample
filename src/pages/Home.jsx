@@ -1,13 +1,18 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { ItemContext } from '../providers/ItemProvider';
 
 import { ItemIcon } from '../components/personalParts/home/ItemIcon';
 
 export const Home = memo(() => {
+  const location = useLocation();
+  const category = location.state;
+  console.log(category);
   //データを取得
   const items = React.useContext(ItemContext);
+
+  const mapItem = location.state != null ? '' : items;
 
   //ページ遷移に要するhistoryを取得
   const history = useHistory();
@@ -23,7 +28,7 @@ export const Home = memo(() => {
     <>
       <br />
       <SitemContainer>
-        {items.map((item) => {
+        {mapItem.map((item) => {
           return (
             <ItemIcon
               key={item.id}

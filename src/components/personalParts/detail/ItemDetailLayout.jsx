@@ -97,10 +97,7 @@ export const ItemDetailLayout = memo((props) => {
             category={res.brand}
             heading={'brand'}
           />
-          <DetailList
-            category={res.category}
-            heading={'category'}
-          />
+
           <DetailList
             category={res.detail}
             heading={'detail'}

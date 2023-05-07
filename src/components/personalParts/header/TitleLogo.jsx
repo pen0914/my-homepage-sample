@@ -21,6 +21,7 @@ const SWrapper = styled.div`
   && {
     @media (min-width: 600px) {
       text-align: left;
+      z-index: 15;
     }
     position: relative;
     top: 50%;

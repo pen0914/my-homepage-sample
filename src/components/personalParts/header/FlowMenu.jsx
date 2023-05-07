@@ -1,19 +1,29 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FlowMenu = (props) => {
   const { className } = props;
+  const history = useHistory();
+
+  const onClickSort = () => {
+    history.push('/', { state: 'aaa' });
+  };
   return (
     <SDiv className={className}>
       <SUl>
         <SLi>
-          <h5>Home</h5>
+          <h5>
+            <button>Home</button>
+          </h5>
         </SLi>
         <SLi>
           <h5>Category</h5>
           <SMore>
             <SDl>
-              <SDt>Outer</SDt>
+              <SDt>
+                <button onClick={onClickSort}>Outer</button>
+              </SDt>
               <SDd>light-outer</SDd>
               <SDd>heavy-outer</SDd>
             </SDl>
