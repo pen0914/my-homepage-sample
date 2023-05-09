@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FlowMenu = (props) => {
@@ -28,7 +28,11 @@ export const FlowMenu = (props) => {
               <SDd>heavy-outer</SDd>
             </SDl>
             <SDl>
-              <SDt>Tops</SDt>
+              <SDt>
+                <Link to={'/'} state={{ category: 'aaa' }}>
+                  Tops
+                </Link>
+              </SDt>
               <SDd>t-shirt</SDd>
               <SDd>vest</SDd>
               <SDd>shirt</SDd>
