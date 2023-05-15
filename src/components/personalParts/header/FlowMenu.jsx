@@ -1,15 +1,20 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+
 import styled from 'styled-components';
 import { CategoryLink } from '../../commonParts/ui-materials/CategoryLink';
 
 export const FlowMenu = (props) => {
   const { className } = props;
-  const history = useHistory();
+  const outer = ['light-outer', 'heavy-outer'];
+  const tops = [
+    't-shirt',
+    'vest',
+    'shirt',
+    'sweat',
+    'knit'
+  ];
+  const bottoms = ['pants', 'skirt'];
 
-  const onClickSort = () => {
-    history.push('/', { state: 'aaa' });
-  };
   return (
     <SDiv className={className}>
       <SUl>
@@ -23,27 +28,40 @@ export const FlowMenu = (props) => {
           <SMore>
             <SDl>
               <SDt>
-                <button onClick={onClickSort}>Outer</button>
+                <CategoryLink name={'Outer'} />
               </SDt>
-              <SDd>light-outer</SDd>
-              <SDd>heavy-outer</SDd>
+              {outer.map((outer) => {
+                return (
+                  <SDd key={outer}>
+                    <CategoryLink name={outer} />
+                  </SDd>
+                );
+              })}
             </SDl>
             <SDl>
               <SDt>
-                <CategoryLink name={'tops'} />
+                <CategoryLink name={'Tops'} />
               </SDt>
-              <SDd>
-                <CategoryLink name={'t-shirt'} />
-              </SDd>
-              <SDd>vest</SDd>
-              <SDd>shirt</SDd>
-              <SDd>sweat</SDd>
-              <SDd>knit</SDd>
+              {tops.map((tops) => {
+                return (
+                  <SDd key={tops}>
+                    <CategoryLink name={tops} />
+                  </SDd>
+                );
+              })}
             </SDl>
             <SDl>
-              <SDt>Bottoms</SDt>
-              <SDd>pants</SDd>
-              <SDd>skirt</SDd>
+              <SDt>
+                {' '}
+                <CategoryLink name={'Bottoms'} />
+              </SDt>
+              {bottoms.map((bottoms) => {
+                return (
+                  <SDd key={bottoms}>
+                    <CategoryLink name={bottoms} />
+                  </SDd>
+                );
+              })}
             </SDl>
           </SMore>
         </SLi>

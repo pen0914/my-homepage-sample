@@ -1,15 +1,22 @@
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const CategoryLink = (props) => {
   const { name } = props;
   return (
-    <Link
+    <SLink
       to={{
         pathname: '/',
         state: name
       }}
     >
       {name}
-    </Link>
+    </SLink>
   );
 };
+
+const SLink = styled(Link)`
+  && {
+    color: white;
+  }
+`;
