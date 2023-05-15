@@ -4,18 +4,24 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { ItemContext } from '../providers/ItemProvider';
 
 import { ItemIcon } from '../components/personalParts/home/ItemIcon';
+import { useSortData } from '../hooks/useSortData';
 
 export const Home = memo(() => {
   const location = useLocation();
   const category = location.state;
+  const { DoSort, sortData } = useSortData();
   console.log(category);
   //データを取得
   const items = React.useContext(ItemContext);
 
-  useEffect(() => {}, []);
-
   //ソート
-  const mapItem = location.state != null ? category : items;
+  useEffect(() => {
+    if (category != null) {
+      DoSort({ category, items });
+    }
+  }, [DoSort, category, items]);
+
+  const mapItem = location.state != null ? sortData : items;
 
   //ページ遷移に要するhistoryを取得
   const history = useHistory();
