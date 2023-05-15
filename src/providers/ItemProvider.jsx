@@ -10,8 +10,8 @@ export const ItemContext = React.createContext([
     price: '￥5,100',
     brand: 'Vintage',
     category: {
-      first: 'light-outer',
-      second: 'trackjacket'
+      first: 'Outer',
+      second: 'light-outer'
     },
     detail: 'ベロア生地',
     size: 'M',
@@ -27,7 +27,7 @@ export const ItemContext = React.createContext([
     price: '￥7,900',
     brand: 'Vintage',
     category: {
-      first: 'tops',
+      first: 'Tops',
       second: 'sweat'
     },
     detail: 'ポケット付き',
@@ -44,8 +44,8 @@ export const ItemContext = React.createContext([
     price: '￥6,100',
     brand: 'Vintage',
     category: {
-      first: 'light-outer',
-      second: 'trackjacket'
+      first: 'Outer',
+      second: 'light-outer'
     },
     detail: '裏地にメッシュ',
     size: 'M',
@@ -62,7 +62,7 @@ export const ItemContext = React.createContext([
     brand: 'Vintage',
     category: {
       first: 'bottoms',
-      second: 'trackpants'
+      second: 'pants'
     },
     detail: 'サイドラインに刺繍',
     size: 'S',
@@ -163,8 +163,8 @@ export const ItemContext = React.createContext([
     price: '￥15,500',
     brand: 'towncraft',
     category: {
-      first: 'light-outer',
-      second: 'souvenir'
+      first: 'Outer',
+      second: 'light-outer'
     },
     detail: '胸元、袖、バックに刺繍',
     size: 'M',
@@ -180,8 +180,8 @@ export const ItemContext = React.createContext([
     price: '￥9,800',
     brand: 'Vintage',
     category: {
-      first: 'light-outer',
-      second: 'trackjacket'
+      first: 'Outer',
+      second: 'light-outer'
     },
     detail: 'ベロア生地',
     size: 'M',
@@ -197,8 +197,8 @@ export const ItemContext = React.createContext([
     price: '￥6,200',
     brand: 'Vintage',
     category: {
-      first: 'light-outer',
-      second: 'trackjacket'
+      first: 'Outer',
+      second: 'light-outer'
     },
     detail: '裏地にフリース生地',
     size: 'M',
@@ -214,8 +214,8 @@ export const ItemContext = React.createContext([
     price: '￥3,100',
     brand: 'Vintage',
     category: {
-      first: 'light-outer',
-      second: 'trackjacket'
+      first: 'Outer',
+      second: 'light-outer'
     },
     detail: '首元、袖に刺繍',
     size: 'M',
@@ -231,7 +231,7 @@ export const ItemContext = React.createContext([
     price: '￥21,200',
     brand: 'Carhartt',
     category: {
-      first: 'tops',
+      first: 'Tops',
       second: 'vest'
     },
     detail: '胸元に刺繍',
@@ -248,7 +248,7 @@ export const ItemContext = React.createContext([
     price: '￥5,900',
     brand: 'Vintage',
     category: {
-      first: 'tops',
+      first: 'Tops',
       second: 'pullover'
     },
     detail: '胸元に刺繍',
