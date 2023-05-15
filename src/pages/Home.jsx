@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import styled from 'styled-components';
 import { useHistory, useLocation } from 'react-router-dom';
 import { ItemContext } from '../providers/ItemProvider';
@@ -12,7 +12,10 @@ export const Home = memo(() => {
   //データを取得
   const items = React.useContext(ItemContext);
 
-  const mapItem = location.state != null ? '' : items;
+  useEffect(() => {}, []);
+
+  //ソート
+  const mapItem = location.state != null ? category : items;
 
   //ページ遷移に要するhistoryを取得
   const history = useHistory();

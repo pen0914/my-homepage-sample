@@ -29,7 +29,12 @@ export const FlowMenu = (props) => {
             </SDl>
             <SDl>
               <SDt>
-                <Link to={'/'} state={{ category: 'aaa' }}>
+                <Link
+                  to={{
+                    pathName: '/',
+                    state: 'tops'
+                  }}
+                >
                   Tops
                 </Link>
               </SDt>
