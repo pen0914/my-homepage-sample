@@ -31,7 +31,7 @@ export const FlowMenu = (props) => {
               <SDt>
                 <Link
                   to={{
-                    pathName: '/',
+                    pathname: '/',
                     state: 'tops'
                   }}
                 >
