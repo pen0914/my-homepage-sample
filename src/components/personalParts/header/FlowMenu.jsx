@@ -52,7 +52,6 @@ export const FlowMenu = (props) => {
             </SDl>
             <SDl>
               <SDt>
-                {' '}
                 <CategoryLink name={'Bottoms'} />
               </SDt>
               {bottoms.map((bottoms) => {
