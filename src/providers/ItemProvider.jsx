@@ -95,8 +95,8 @@ export const ItemContext = React.createContext([
     price: '￥9,900',
     brand: 'override',
     category: {
-      first: 'cap&hat',
-      second: 'buckethat'
+      first: 'Cap&Hat',
+      second: 'hat'
     },
     detail: '紐付き',
     size: 'M',
@@ -112,8 +112,8 @@ export const ItemContext = React.createContext([
     price: '￥6,600',
     brand: 'stussy',
     category: {
-      first: 'cap&hat',
-      second: 'buckethat'
+      first: 'Cap&Hat',
+      second: 'hat'
     },
     detail: 'チェック柄',
     size: 'M',
@@ -129,7 +129,7 @@ export const ItemContext = React.createContext([
     price: '￥14,500',
     brand: 'oldStussy',
     category: {
-      first: 'cap&hat',
+      first: 'Cap&Hat',
       second: 'beanie'
     },
     detail: 'ロゴ刺繍',
@@ -146,8 +146,8 @@ export const ItemContext = React.createContext([
     price: '￥7,100',
     brand: 'override',
     category: {
-      first: 'cap&hat',
-      second: 'buckethat'
+      first: 'Cap&Hat',
+      second: 'hat'
     },
     detail: 'リバーシブル',
     size: 'M',

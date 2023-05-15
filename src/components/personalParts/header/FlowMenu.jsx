@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 import { CategoryLink } from '../../commonParts/ui-materials/CategoryLink';
@@ -14,13 +15,15 @@ export const FlowMenu = (props) => {
     'knit'
   ];
   const bottoms = ['pants', 'skirt'];
+  const cap = ['cap', 'hat', 'beanie'];
+  const accessory = ['ring', 'necklace', 'pins'];
 
   return (
     <SDiv className={className}>
       <SUl>
         <SLi>
           <h5>
-            <button>Home</button>
+            <SLink to="/">Home</SLink>
           </h5>
         </SLi>
         <SLi>
@@ -68,22 +71,39 @@ export const FlowMenu = (props) => {
           <h5>Goods</h5>
           <SMore>
             <SDl>
-              <SDt>Cap&Hat</SDt>
-              <SDd>cap</SDd>
-              <SDd>hat</SDd>
-              <SDd>beanie</SDd>
+              <SDt>
+                {' '}
+                <CategoryLink name={'Cap&Hat'} />
+              </SDt>
+              {cap.map((cap) => {
+                return (
+                  <SDd key={cap}>
+                    <CategoryLink name={cap} />
+                  </SDd>
+                );
+              })}
             </SDl>
             <SDl>
-              <SDt>Shoes</SDt>
+              <SDt>
+                <CategoryLink name={'Shoes'} />
+              </SDt>
             </SDl>
             <SDl>
-              <SDt>Accessory</SDt>
-              <SDd>ring</SDd>
-              <SDd>necklace</SDd>
-              <SDd>pins</SDd>
+              <SDt>
+                <CategoryLink name={'Accessory'} />
+              </SDt>
+              {accessory.map((ac) => {
+                return (
+                  <SDd key={ac}>
+                    <CategoryLink name={ac} />
+                  </SDd>
+                );
+              })}
             </SDl>
             <SDl>
-              <SDt>Bag</SDt>
+              <SDt>
+                <CategoryLink name={'Bag'} />
+              </SDt>
             </SDl>
           </SMore>
         </SLi>
@@ -128,6 +148,16 @@ const SLi = styled.li`
     background-color: #333537;
 
     color: #e0e0e0;
+    :hover {
+      color: rgb(254, 128, 2);
+    }
+  }
+`;
+
+const SLink = styled(Link)`
+  && {
+    color: white;
+    text-decoration: none;
     :hover {
       color: rgb(254, 128, 2);
     }

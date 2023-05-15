@@ -18,5 +18,9 @@ export const CategoryLink = (props) => {
 const SLink = styled(Link)`
   && {
     color: white;
+    text-decoration: none;
+    :hover {
+      color: rgb(254, 128, 2);
+    }
   }
 `;
