@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { CategoryLink } from '../../commonParts/ui-materials/CategoryLink';
 
 export const FlowMenu = (props) => {
   const { className } = props;
@@ -29,16 +30,11 @@ export const FlowMenu = (props) => {
             </SDl>
             <SDl>
               <SDt>
-                <Link
-                  to={{
-                    pathname: '/',
-                    state: 'tops'
-                  }}
-                >
-                  Tops
-                </Link>
+                <CategoryLink name={'tops'} />
               </SDt>
-              <SDd>t-shirt</SDd>
+              <SDd>
+                <CategoryLink name={'t-shirt'} />
+              </SDd>
               <SDd>vest</SDd>
               <SDd>shirt</SDd>
               <SDd>sweat</SDd>

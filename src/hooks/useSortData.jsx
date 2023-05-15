@@ -5,7 +5,9 @@ export const useSortData = () => {
   const DoSort = useCallback((props) => {
     const { category, items } = props;
     const sortArray = items.filter(
-      (item) => item.category.first === category
+      (item) =>
+        item.category.first === category ||
+        item.category.second === category
     );
     setSortData(sortArray);
   }, []);
