@@ -1,6 +1,7 @@
 import React, { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { CategoryLink } from '../../commonParts/ui-materials/CategoryLink';
 
 export const Drawer = memo((props) => {
   const { active } = props;
@@ -55,29 +56,19 @@ export const Drawer = memo((props) => {
             </SUlx>
           </SL>
           <SL>
-            <SLink active={active} to="/">
-              ご利用ガイド
-            </SLink>
+            <CategoryLink name={'Outer'} />
           </SL>
           <SL>
-            <SLink active={active} to="/">
-              お問い合わせ
-            </SLink>
+            <CategoryLink name={'Tops'} />
           </SL>
           <SL>
-            <SLink active={active} to="/">
-              よくあるご質問
-            </SLink>
+            <CategoryLink name={'Bottoms'} />
           </SL>
           <SL>
-            <SLink active={active} to="/">
-              プライバシーポリシー
-            </SLink>
+            <SLink active={active} to="/"></SLink>
           </SL>
           <SL>
-            <SLink to="/" active={active}>
-              特定商取引法に基づく表示
-            </SLink>
+            <SLink to="/" active={active}></SLink>
           </SL>
         </SUl>
       </SNav>

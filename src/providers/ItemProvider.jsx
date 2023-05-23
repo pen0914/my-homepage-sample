@@ -61,7 +61,7 @@ export const ItemContext = React.createContext([
     price: '￥13,800',
     brand: 'Vintage',
     category: {
-      first: 'bottoms',
+      first: 'Bottoms',
       second: 'pants'
     },
     detail: 'サイドラインに刺繍',
@@ -78,7 +78,7 @@ export const ItemContext = React.createContext([
     price: '￥8,200',
     brand: 'Vintage',
     category: {
-      first: 'bottoms',
+      first: 'Bottoms',
       second: 'slacks'
     },
     detail: 'ペイズリー柄',
