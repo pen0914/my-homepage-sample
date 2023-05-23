@@ -17,7 +17,7 @@ export const Drawer = memo((props) => {
         <SUl>
           <SL>
             <SLink active={active} to="/">
-              ホーム
+              Home
             </SLink>
           </SL>
           <SL>
