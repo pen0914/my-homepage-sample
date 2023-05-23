@@ -57,6 +57,18 @@ export const Drawer = memo((props) => {
           </SL>
           <SL>
             <CategoryLink name={'Outer'} />
+            <SUlx ca={ca}>
+              <SLx>
+                <SLinkx ca={ca} to="/">
+                  light-outer
+                </SLinkx>
+              </SLx>
+              <SLx>
+                <SLinkx ca={ca} to="/">
+                  heavy-outer
+                </SLinkx>
+              </SLx>
+            </SUlx>
           </SL>
           <SL>
             <CategoryLink name={'Tops'} />
@@ -65,10 +77,13 @@ export const Drawer = memo((props) => {
             <CategoryLink name={'Bottoms'} />
           </SL>
           <SL>
-            <SLink active={active} to="/"></SLink>
+            <CategoryLink name={'Cap&Hat'} />
           </SL>
           <SL>
-            <SLink to="/" active={active}></SLink>
+            <CategoryLink name={'Accessories'} />
+          </SL>
+          <SL>
+            <CategoryLink name={'Bag'} />
           </SL>
         </SUl>
       </SNav>
