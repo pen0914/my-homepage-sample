@@ -5,86 +5,92 @@ import { CategoryLink } from '../../commonParts/ui-materials/CategoryLink';
 
 export const Drawer = memo((props) => {
   const { active } = props;
-  const [ca, setCa] = useState(false);
 
-  const onClickCategory = () => {
-    setCa(!ca);
-  };
 
   return (
     <SDiv active={active}>
       <SNav>
         <SUl>
-          <SL>
+        <SLi>
             <SLink active={active} to="/">
               Home
             </SLink>
-          </SL>
-          <SL>
-            <SButton
-              active={active}
-              onClick={onClickCategory}
-            >
-              カテゴリー
-            </SButton>
-            <SUlx ca={ca}>
-              <SLx>
-                <SLinkx ca={ca} to="/">
-                  Tops
-                </SLinkx>
-              </SLx>
-              <SLx>
-                <SLinkx ca={ca} to="/">
-                  Pants
-                </SLinkx>
-              </SLx>
-              <SLx>
-                <SLinkx ca={ca} to="/">
-                  Outer
-                </SLinkx>
-              </SLx>
-              <SLx>
-                <SLinkx ca={ca} to="/">
-                  Headwear
-                </SLinkx>
-              </SLx>
-              <SLx>
-                <SLinkx ca={ca} to="/">
-                  Accessories
-                </SLinkx>
-              </SLx>
-            </SUlx>
-          </SL>
-          <SL>
-            <CategoryLink name={'Outer'} />
-            <SUlx ca={ca}>
-              <SLx>
-                <SLinkx ca={ca} to="/">
-                  light-outer
-                </SLinkx>
-              </SLx>
-              <SLx>
-                <SLinkx ca={ca} to="/">
-                  heavy-outer
-                </SLinkx>
-              </SLx>
-            </SUlx>
-          </SL>
-          <SL>
-            <CategoryLink name={'Tops'} />
-          </SL>
-          <SL>
-            <CategoryLink name={'Bottoms'} />
-          </SL>
-          <SL>
-            <CategoryLink name={'Cap&Hat'} />
-          </SL>
-          <SL>
-            <CategoryLink name={'Accessories'} />
-          </SL>
-          <SL>
-            <CategoryLink name={'Bag'} />
-          </SL>
+          </SLi>
+
+          <SLi>
+            <SCategoryLink name={'Outer'} />
+
+            <SUl2>
+              <SLi2>
+                <SCategoryLink name={'light-outer'} />
+              </SLi2>
+              <SLi2>
+                <SCategoryLink name={'heavy-outer'} />
+              </SLi2>
+            </SUl2>
+          </SLi>
+          <SLi>
+            <SCategoryLink name={'Tops'} />
+            <SUl2>
+              <SLi2>
+                <SCategoryLink name={'t-shirt'} />
+              </SLi2>
+              <SLi2>
+                <SCategoryLink name={'vest'} />
+              </SLi2>
+              <SLi2>
+                <SCategoryLink name={'shirt'} />
+              </SLi2>
+              <SLi2>
+                <SCategoryLink name={'sweat'} />
+              </SLi2>
+              <SLi2>
+                <SCategoryLink name={'knit'} />
+              </SLi2>
+            </SUl2>
+          </SLi>
+          <SLi>
+            <SCategoryLink name={'Bottoms'} />
+            <SUl2>
+              <SLi2>
+                <SCategoryLink name={'pants'} />
+              </SLi2>
+              <SLi2>
+                <SCategoryLink name={'skirt'} />
+              </SLi2>
+            </SUl2>
+          </SLi>
+          <SLi>
+            <SCategoryLink name={'Cap&Hat'} />
+            <SUl2>
+              <SLi2>
+                <SCategoryLink name={'cap'} />
+              </SLi2>
+              <SLi2>
+                <SCategoryLink name={'hat'} />
+              </SLi2>
+              <SLi2>
+                <SCategoryLink name={'beanie'} />
+              </SLi2>
+            </SUl2>
+          </SLi>
+          <SLi>
+            <SCategoryLink name={'Accessories'} />
+            <SUl2>
+              <SLi2>
+                <SCategoryLink name={'ring'} />
+              </SLi2>
+              <SLi2>
+                <SCategoryLink name={'necklace'} />
+              </SLi2>
+              <SLi2>
+                <SCategoryLink name={'pins'} />
+              </SLi2>
+            </SUl2>
+          </SLi>
+          <SLi>
+            <SCategoryLink name={'Bag'} />
+          </SLi>
         </SUl>
       </SNav>
     </SDiv>
@@ -94,14 +100,10 @@ export const Drawer = memo((props) => {
 const SDiv = styled.div`
   && {
     width: 100%;
-
-    /* @media not all and (max-width: 600px) {
-      display: flex;
-      background-color: #333537;
-    } */
-
     background-color: rgba(51, 53, 55, 0.9);
     height: 930px;
+    font-size: 15px;
+    font-weight: bold;
   }
 `;
 
@@ -118,20 +120,24 @@ const SUl = styled.ul`
   }
 `;
 
-const SUlx = styled(SUl)`
-  && {
-    display: ${(props) => (props.ca ? '' : 'none')};
-  }
-`;
-
-const SL = styled.li`
+const SLi = styled.li`
   && {
     list-style: none;
     border-bottom: 1px solid #6d6d6d;
   }
 `;
 
-const SLx = styled(SL)`
+const SUl2 = styled(SUl)`
+  && {
+    display: none;
+
+    ${SLi}:hover & {
+      display: inline;
+    }
+  }
+`;
+
+const SLi2 = styled(SL)`
   && {
     background-color: #333537;
   }
@@ -142,31 +148,11 @@ const SLink = styled(Link)`
     text-decoration: none;
     background: transparent;
     color: white;
-    font-size: 15px;
-    font-weight: bold;
-    transition: ${(props) =>
-      props.active && 'opacity 3s ease-out'};
-    opacity: ${(props) => (props.active ? '1' : '0')};
+    
   }
 `;
 
-const SButton = styled.button`
+const SCategoryLink = styled(CategoryLink)`
   && {
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    transition: ${(props) =>
-      props.active && 'opacity 3s ease-out'};
-    opacity: ${(props) => (props.active ? '1' : '0')};
-  }
-`;
-
-const SLinkx = styled(SLink)`
-  && {
-    transition: ${(props) =>
-      props.ca && 'opacity 3s ease-out'};
-    opacity: ${(props) => (props.ca ? '1' : '0')};
   }
 `;

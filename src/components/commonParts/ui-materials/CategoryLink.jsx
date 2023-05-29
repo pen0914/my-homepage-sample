@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const CategoryLink = (props) => {
-  const { name } = props;
+  const { name,className } = props;
   return (
     <SLink
       to={{
         pathname: '/',
         state: name
       }}
+      className={className}
     >
       {name}
     </SLink>
